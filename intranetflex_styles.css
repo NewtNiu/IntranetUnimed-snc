@@ -15,14 +15,13 @@ body {
     background-color: #ffffff;
 }
 
-/*HEADER*/
+/*-----HEADER-----*/
 header {
     width: 100%;
     height: 90px;
     background-color: #107643;
     padding: 5px;
 }
-
 header div {
     display: flex;
     flex-direction: row;
@@ -31,14 +30,13 @@ header div {
     align-content: center;
     gap: 10px;
 }
-
+/*Header Elementos*/
 .h_imglogo {
     width: 100%;
     height: 80px;
     margin-left: -40px;
     margin-right: 40px;
 }
-
 .h_pesquisa {
     width: 600px;
     height: 40px;
@@ -49,7 +47,6 @@ header div {
     padding-left: 10px;
     padding-right: 10px;
 }
-
 .h_nomeusuario {
     font-size: 20px;
 }
@@ -57,16 +54,14 @@ header div {
 .h_risco {
     font-size: 30px;
 }
-
 .h_imgusuario {
     height: 70px;
     border-radius: 100%;
     border: 2px solid rgb(0, 0, 0);
 }
 
-/*--CORPO II--*/
-
-/*containers*/
+/*-----===CONTEUDO===-----*/
+/*--container--*/
 .container {
     display: flex;
     flex-direction: row;
@@ -75,10 +70,14 @@ header div {
     max-width: 80%;
     align-content: center;
     gap: 10px;
-
     margin: 5px auto 0;
 }
-
+@media(min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+    }
+}
+/*-----SISTEMAS-----*/
 .sistemas {
     width: 300px;
     height: 921px;
@@ -95,7 +94,14 @@ header div {
     align-content: center;
     gap: 5px;
 }
+/*Sistemas Elementos*/
+.blocossis{
+    width: 90%;
+    height: 90px;
+    background-color: rgb(189, 189, 189);
+}
 
+/*--container--*/
 .container2 {
     width: 790px;
     display: flex;
@@ -107,6 +113,7 @@ header div {
     gap: 10px;
 }
 
+/*-----NAVEGAÇÃO-----*/
 .navegacao {
     width: 790px;
     height: 55px;
@@ -115,16 +122,56 @@ header div {
     border: 1px solid #000000;
     border-radius: 3px;
 }
+/*Navegação Elementos*/
+.navegacao{
+    background-color: #107643;
+    height: 50px;
+    border-radius: 3px;
+}
+.nav-list{
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li a{
+    letter-spacing: 1px;
+    justify-content: flex-start;
+    list-style-type: none;
+    color: #fff;
+    text-decoration: none;
+}
+li#nav {
+    padding: 10px 15px;
+    gap: 3px;
+}
+a:hover {
+    color: rgb(60, 255, 0);
+}
+.pgatual {
+    background-color: #10452B;
+    border-radius: 7px;
+}
+.pgatual a:hover {
+    color: #ffffff;
+}
 
+/*-----BANNER-----*/
 .banner {
     width: 790px;
     height: 250px;
     background-color: #2B8057;
-
     border: 1px solid #000000;
     border-radius: 3px;
 }
+/*Banners Elementos*/
+.banner img {
+    width: 100%;
+    height: 100%;
+}
 
+/*-----PRINCIPAIS-----*/
 .principais {
     width: 790px;
     height: 300px;
@@ -139,7 +186,15 @@ header div {
     align-content: center;
     gap: 10px;
 }
+/*Principais Elementos*/
+.p_blocos{
+    width: 200px;
+    height: 110px;
+    background-color: #000000;
+    }
 
+
+/*-----DATA-----*/
 .data {
     width: 790px;
     height: 30px;
@@ -147,7 +202,9 @@ header div {
 
     border-radius: 3px;
 }
+/*Data Elementos*/
 
+/*-----ANIVERSARIANTES-----*/
 .aniversariantes {
     width: 790px;
     height: 250px;
@@ -155,7 +212,9 @@ header div {
 
     border-radius: 7px;
 }
+/*Aniversariantes Elementos*/
 
+/*-----footer-----*/
 footer {
     width: 100%;
     height: 100px;
@@ -164,75 +223,3 @@ footer {
     margin-top: 5px;
     text-align: center;
 }
-
-@media(min-width: 1600px) {
-    .container {
-        max-width: 1600px;
-    }
-}
-
-/*Nav*/
-.navegacao {
-    background-color: #107643;
-    height: 50px;
-    border-radius: 3px;
-}
-
-.nav-list {
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-}
-
-nav ul li a {
-    letter-spacing: 1px;
-    justify-content: flex-start;
-    list-style-type: none;
-    color: #fff;
-    text-decoration: none;
-}
-
-li#nav {
-    padding: 10px 15px;
-    gap: 3px;
-}
-
-a:hover {
-    color: rgb(60, 255, 0);
-}
-
-.pgatual {
-    background-color: #10452B;
-    border-radius: 7px;
-}
-
-.pgatual a:hover {
-    color: #ffffff;
-}
-
-/*banner*/
-.banner img {
-    width: 100%;
-    height: 100%;
-}
-
-/*--principais--*/
-/*elementos*/
-.p_blocos{
-width: 200px;
-height: 110px;
-background-color: #000000;
-}
-
-
-/*--sistemas--*/
-/*elementos*/
-
-.blocossis{
-    width: 90%;
-    height: 90px;
-    background-color: rgb(189, 189, 189);
-}
-
