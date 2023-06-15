@@ -59,32 +59,42 @@ header div {
 }
 .h_imgusuario {
     height: 70px;
-    border-radius: 100%;
+    border-radius: 120%;
     border: 2px solid rgb(0, 0, 0);
 }
 
 /*-----===CONTEUDO===-----*/
 /*--container--*/
-.container {
+.container{
+    /* max-width: 500px; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: start;
-    max-width: 80%;
     align-content: center;
     gap: 10px;
     margin: 5px auto 0;
+    flex-wrap: wrap;
 }
-@media(min-width: 1600px) {
-    .container {
-        max-width: 1600px;
+@media(max-width: 1275px) {
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        align-content: center;
+        gap: 10px;
+        margin: 5px auto 0;
+        flex-wrap: nowrap;
     }
 }
+
 /*-----SISTEMAS-----*/
 .sistemas {
-    width: 300px;
-    height: 1020px;
-    background-color: #0C6538;
+    width: 220px;
+    /* height: 1020px; */
+    /* background-image:linear-gradient(to right, #005600, #0b6f39); */
+    background-color: #0B6939;
 
     border: 1px solid #000000;
     border-radius: 15px;
@@ -95,21 +105,60 @@ header div {
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap: 5px;
+    /* gap: 11px; */
 
     padding: 12px 0px 12px 0px;
+    text-align: left;
 }
 /*Sistemas Elementos*/
-.blocossis{
-    width: 90%;
-    height: 4.76%;
-    background-color: rgb(189, 189, 189);
-    padding-top: 5px;
-    text-align: start;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.blocosvpn{
+    width: 92%;
+    height: 40px;
+    
+    /* border-bottom: 1px solid #E55300; */
+    box-shadow: 0px 1px #07532e;
+
+    color: #E55300;
+    font-size: 14px;
+    text-align: left;
+    padding: 15px 0 0 13px;
+    cursor: pointer;
+}
+.blocosvpn:hover{
+    width: 100%;
+    background-image:linear-gradient(to right, #76b852, #8DC26F);
+}
+
+.divisoria{
+    width: 92%;
+    height: 0px;
+    background-color: cornflowerblue;
+    box-shadow: 0px 3px #07532e;
+}
+
+.blocossis{
+    width: 92%;
+    min-height: 40px;
+    
+    /* border-bottom: 1px solid white; */
+    box-shadow: 0px 1px #07532e;
+
+    font-size: 13px;
+    text-align: left;
+    padding: 13px 0 0 13px;
+    cursor: pointer;
+   
+}
+
+.blocossis:hover{
+    width: 100%;
+    background-image:linear-gradient(to right, #76b852, #8DC26F);
+}
+
+.blocossis a{
+    color: #E6E6E6;
+    
 }
 
 /*--container--*/
@@ -157,16 +206,12 @@ li#nav {
     padding: 10px 15px;
     gap: 3px;
 }
-a:hover {
-    color: rgb(161, 13, 13);
-}
+
 .pgatual {
     background-color: #10452B;
     border-radius: 7px;
 }
-.pgatual a:hover {
-    color: #ffffff;
-}
+
 
 /*-----BANNER-----*/
 .banner {
@@ -185,9 +230,9 @@ a:hover {
 /*-----PRINCIPAIS-----*/
 .principais {
     width: 790px;
-    height: 400px;
+    /* height: 400px; */
 
-    background-color: #E6E6E6;
+    /* background-color: #E6E6E6; */
 
     display: flex;
     flex-direction: row;
@@ -198,11 +243,49 @@ a:hover {
     gap: 10px;
 }
 /*Principais Elementos*/
-.p_blocos{
-    width: 220px;
-    height: 150px;
-    background-color: #000000;
-    }
+.p_box_paineldegestao{
+    width: 200px;
+    height: 170px;
+    background-color: #081C61;
+}
+
+.p_box_sistemadegestao{
+    width: 200px;
+    height: 170px;
+    background-color: #C33333;
+}
+
+.p_box_intratarefas{
+    width: 200px;
+    height: 170px;
+    background-color: #FF9950;
+}
+
+.p_box_webmail{
+    width: 200px;
+    height: 170px;
+    background-color: #7C00A8;
+}
+
+.p_box_blip{
+    width: 200px;
+    height: 170px;
+    background-color: #1D9908;
+}
+
+.p_box_nutrição{
+    width: 200px;
+    height: 170px;
+    background-color: #6C2B2B;
+}
+
+
+
+
+    /* .p_blocos:hover{
+        background-color: #262626;
+    } */
+
 
 
 /*-----DATA-----*/
@@ -222,6 +305,7 @@ a:hover {
     background-color: #081C61;
 
     border-radius: 7px;
+    
 }
 /*Aniversariantes Elementos*/
 
