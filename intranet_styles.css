@@ -9,6 +9,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 a{
     text-decoration: none;
 }
@@ -39,10 +40,7 @@ header div{
 
 /*Header Elementos*/
 .headerImgLogo{
-    width: 100%;
     height: 80px;
-    margin-left: -40px;
-    margin-right: 40px;
 }
 .headerBarraDePesquisa {
     width: 600px;
@@ -73,7 +71,6 @@ header div{
     justify-content: center;
     align-items: center;
     align-content: center;
-    gap: 10px;
     margin: 5px auto 0;
     flex-wrap: wrap;
     background-color: white !important;
@@ -131,12 +128,13 @@ header div{
 .blocosvpn:hover{
     width: 100%;
     background-image:linear-gradient(to right, #76b852, #8DC26F);
+    transition: all .3s ease-in-out;
 }
 .blocossis{
     width: 92%;
     min-height: 40px;
     
-    /* border-bottom: 1px solid white; */
+    transition: all .3s ease-in-out;
     box-shadow: 0px 1px #07532e;
 
     font-size: 13px;
@@ -147,6 +145,7 @@ header div{
 .blocossis:hover{
     width: 100%;
     background-image:linear-gradient(to right, #76b852, #8DC26F);
+    
 }
 .blocossis a{
     color: #E6E6E6;
@@ -200,6 +199,7 @@ li#nav {
 }
 nav ul li a:hover {
     color: rgb(27, 41, 31);
+    transition: all .3s ease-in-out;
 }
 .pgatual {
     background-color: #10452B;
@@ -224,10 +224,10 @@ nav ul li a:hover {
 }
 
 /*-----PRINCIPAIS-----*/
+
 .principais {
     width: 790px;
     /* height: 400px; */
-
     background-color: #E6E6E6;
 
     display: flex;
@@ -236,49 +236,118 @@ nav ul li a:hover {
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
-    gap: 10px;
+    gap: 14px;
 }
 /*Principais Elementos*/
+
 .p_box_paineldegestao{
     width: 200px;
     height: 170px;
-    background-color: #081C61;
+    background-color: #1D52A3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+.p_box_paineldegestao img {
+    height: 64%;
+}
+
 .p_box_sistemadegestao{
     width: 200px;
     height: 170px;
-    background-color: #C33333;
+    background-color: #F06E5B;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+.p_box_sistemadegestao img{
+    height: 70%;
+}
+
 .p_box_intratarefas{
     width: 200px;
     height: 170px;
-    background-color: #FF9950;
+    background-color: #4386F0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+.p_box_intratarefas img{
+    height: 70%;
+}
+
 .p_box_webmail{
     width: 200px;
     height: 170px;
-    background-color: #7C00A8;
+    background-color: #CEEF6B;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+.p_box_webmail img{
+    height: 50%;
+}
+
 .p_box_blip{
     width: 200px;
     height: 170px;
-    background-color: #1D9908;
+    background-color: #84A326;
+    
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
 }
+.p_box_blip img{
+    height: 50%;
+}
+
 .p_box_nutrição{
     width: 200px;
     height: 170px;
     background-color: #6C2B2B;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
 }
-    /* .p_blocos:hover{
-        background-color: #262626;
-    } */
+.p_box_nutrição img{
+    height: 30%;
+}
+
+
+.principais div a {
+    font-size: 14px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.principais div p{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}   
+
+.principais div:hover{
+    background-color: #8DC26F;
+    transition: all .3s ease-in;
+}
 
 /*-----DATA-----*/
 .data {
     width: 790px;
-    height: 30px;
+    height: 22px;
     background-color: #C6FFE3;
-
+    margin-bottom: 7px;
     border-radius: 3px;
 }
 /*Data Elementos*/
@@ -286,17 +355,55 @@ nav ul li a:hover {
 /*-----ANIVERSARIANTES-----*/
 .aniversariantes {
     width: 1020px;
-    height: 250px;
+    height: 235px;
     background-color: #081C61;
+    border-radius: 0px 0px 7px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 7px;
+}
 
-    border-radius: 7px;
+.aniversarianteDia{
+    width: 1020px;
+    height: 40px;
+    background-color: #504f4f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 /*Aniversariantes Elementos*/
+
+.a{
+    width: 120px;
+    height: 120px;
+    background-color: rgb(0, 253, 97);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.b{
+    width: 130px;
+ 
+    display: flex;
+    justify-content: center;
+    gap: 78%;
+ 
+}
+
+
 
 /*-----footer-----*/
 footer {
     width: 100%;
-    background-color: #0e4d2d;
+    background-color: #504f4f;
     margin-top: 2px;
     margin-bottom: 0px;
     display: flex;
@@ -313,18 +420,23 @@ footer {
     align-items: center;
 }
 .conteudofooter{
+    width: 60%;
     display: flex;
     justify-content: start;
     align-items: center;
     text-align: start;
     gap: 10px;
 }
+
+
+
+
 .imgiconlocconteudofooter{
     width: 50px;
     height: 50px;
 }
 .txtendereco{
-    width: 125px;
+    width: 400px;
 }
 
 .f_imglogo{
@@ -333,51 +445,56 @@ footer {
 }
 
 .box_contato{
-    height: 170px;
+    height: 95px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 15px;
     flex-wrap: nowrap;
-    flex-direction: column;
-    border-left: 1px solid #416d07;
+    flex-direction: row;
+    
     padding: 15px;
+    
 }
 .txtcontato{
     text-align: center;
     font-weight: bold;
+    color: #ffffff;
 }
 .box_imgcontatos{
+    width: 18%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 .box_imgcontatos img{
-    width: 50px;
-    height: 50px;
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: white;
 }
 
 .box_imgcontatos img:hover{
-    image-rendering: url("img/icon_facebook-hover.svg");
+    background-color: green;
+    transition: all .3s ease-in-out;
 }
 
 
 .copyright{
     width: 100%;
-    height: 40px;
-    background-color: #0e4d2d;
-
-    border-top: 1px solid #416d07;
-    
+    height: 30px;
+    background-color: #504f4f;
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
     flex-wrap: nowrap;
     gap: 15px;
 }
