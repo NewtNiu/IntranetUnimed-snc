@@ -241,9 +241,12 @@ nav ul li a:hover {
 /*Principais Elementos*/
 
 .p_box_paineldegestao{
-    width: 200px;
+    width: 220px;
     height: 170px;
-    background-color: #1D52A3;
+    background-image:linear-gradient(to left, #1D52A3, #081C61);
+
+    border-radius: 4px;
+    border: 2px solid #07123b;
 
     display: flex;
     align-items: center;
@@ -255,9 +258,11 @@ nav ul li a:hover {
 }
 
 .p_box_sistemadegestao{
-    width: 200px;
+    width: 220px;
     height: 170px;
-    background-color: #F06E5B;
+    background-image:linear-gradient(to right, #a1a1a1, #535353);
+
+    border-radius: 4px;
 
     display: flex;
     justify-content: center;
@@ -269,10 +274,13 @@ nav ul li a:hover {
 }
 
 .p_box_intratarefas{
-    width: 200px;
+    width: 220px;
     height: 170px;
-    background-color: #4386F0;
-    
+    background-image:linear-gradient(to left, #ff5100, #ffd000);
+
+    border-radius: 4px;
+    border: 2px solid #e64b03;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -283,9 +291,12 @@ nav ul li a:hover {
 }
 
 .p_box_webmail{
-    width: 200px;
+    width: 220px;
     height: 170px;
-    background-color: #CEEF6B;
+    background-image:linear-gradient(to right, #db00e2, #99009e);
+
+    border-radius: 4px;
+    border: 2px solid #5c005f;
 
     display: flex;
     align-items: center;
@@ -297,10 +308,12 @@ nav ul li a:hover {
 }
 
 .p_box_blip{
-    width: 200px;
+    width: 220px;
     height: 170px;
-    background-color: #84A326;
+    background-image:linear-gradient(to right, #a1a1a1, #535353);
     
+    border-radius: 4px;
+
     display: flex;
     justify-items: center;
     align-items: center;
@@ -311,9 +324,12 @@ nav ul li a:hover {
 }
 
 .p_box_nutrição{
-    width: 200px;
+    width: 220px;
     height: 170px;
-    background-color: #6C2B2B;
+    background-image:linear-gradient(to right, #a1a1a1, #535353);
+
+    border-radius: 4px;
+
 
     display: flex;
     justify-items: center;
