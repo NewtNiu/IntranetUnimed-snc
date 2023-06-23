@@ -198,8 +198,8 @@ li#nav {
     gap: 3px;
 }
 nav ul li a:hover {
-    color: rgb(27, 41, 31);
-    transition: all .3s ease-in-out;
+    color: #1fcc00;
+    transition: all .4s ease-in-out;
 }
 .pgatual {
     background-color: #10452B;
@@ -225,7 +225,7 @@ nav ul li a:hover {
 
 /*-----PRINCIPAIS-----*/
 
-.principais {
+.principaisSistemas{
     width: 790px;
     /* height: 400px; */
     background-color: #E6E6E6;
@@ -240,7 +240,7 @@ nav ul li a:hover {
 }
 /*Principais Elementos*/
 
-.p_box_paineldegestao{
+.boxPainelDeGestaoSenior{
     width: 220px;
     height: 170px;
     background-image:linear-gradient(to left, #1D52A3, #081C61);
@@ -253,47 +253,51 @@ nav ul li a:hover {
     justify-content: center;
     flex-direction: column;
 }
-.p_box_paineldegestao img {
-    height: 64%;
+.boxPainelDeGestaoSenior img{
+    width: 120px;
+    height: 120px;
 }
 
-.p_box_sistemadegestao{
+.boxSistemaDeGestao{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to right, #a1a1a1, #535353);
+    background-image:linear-gradient(to top, #e91212, #d40b0b);
 
     border-radius: 4px;
+    border: 2px solid #b11313;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.p_box_sistemadegestao img{
-    height: 70%;
+.boxSistemaDeGestao img{
+    width: 120px;
+    height: 120px;
 }
 
-.p_box_intratarefas{
+.boxIntratarefas{
     width: 220px;
     height: 170px;
     background-image:linear-gradient(to left, #ff5100, #ffd000);
 
     border-radius: 4px;
-    border: 2px solid #e64b03;
+    border: 2px solid #f1560e;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.p_box_intratarefas img{
-    height: 70%;
+.boxIntratarefas img{
+    width: 120px;
+    height: 120px;
 }
 
-.p_box_webmail{
+.boxWebMail{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to right, #db00e2, #99009e);
+    background-image:linear-gradient(to left, #9b11a0, #5c0e5f);
 
     border-radius: 4px;
     border: 2px solid #5c005f;
@@ -303,41 +307,45 @@ nav ul li a:hover {
     justify-content: center;
     flex-direction: column;
 }
-.p_box_webmail img{
-    height: 50%;
+.boxWebMail img{
+    width: 120px;
+    height: 120px;
 }
 
-.p_box_blip{
+.boxBlip{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to right, #a1a1a1, #535353);
-    
+    background-image:linear-gradient(to bottom, #1D9908, #13470a);
+
     border-radius: 4px;
+    border: 2px solid #10350a;
 
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.p_box_blip img{
-    height: 50%;
+.boxBlip img{
+    width: 120px;
+    height: 120px;
 }
 
-.p_box_nutrição{
+.boxNutrição{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to right, #a1a1a1, #535353);
+    background-image:linear-gradient(to right, #b35c5c, #883232);
 
     border-radius: 4px;
-
+    border: 2px solid #6C2B2B;
 
     display: flex;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.p_box_nutrição img{
-    height: 30%;
+.boxNutrição img{
+    width: 120px;
+    height: 120px;
 }
 
 
@@ -369,147 +377,211 @@ nav ul li a:hover {
 /*Data Elementos*/
 
 /*-----ANIVERSARIANTES-----*/
-.aniversariantes {
+/*Aniversariantes HEADER*/
+.headerAniversario{
     width: 1020px;
-    height: 235px;
+    height: 40px;
     background-color: #081C61;
-    border-radius: 0px 0px 7px 0px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
+}
+/*Aniversariantes HEADER elementos*/
+.iconHeaderAniversario_ADD{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.iconHeaderAniversario{
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.iconHeaderAniversario img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.iconHeaderAniversario_ADD p{
+    font-weight: bold;
+}
+
+.listaCompleta{
+    margin-right: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: all .10% ease-in-out;
+}
+
+.listaCompleta a:hover{
+    color: rgb(199, 199, 199);
+    transition: all .10% ease-in-out;
+}
+
+/*Aniversariantes*/
+.boxAniversariantes {
+    width: 1020px;
+    height: 235px;
+    background-color: #E7E7E7;
+
+    border-radius: 0px 0px 7px 7px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
     gap: 40px;
     margin-bottom: 7px;
 }
-
-.aniversarianteDia{
-    width: 1020px;
-    height: 40px;
-    background-color: #504f4f;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
 /*Aniversariantes Elementos*/
 
-.a{
-    width: 120px;
-    height: 120px;
-    background-color: rgb(0, 253, 97);
-    border-radius: 100%;
+.perfilAniversariante{
+    width: 15%;
+    height: 95%;
+    /* border: 1px solid rgb(99, 0, 66); */
     display: flex;
-    justify-content: center;
-    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
 }
 
-.b{
-    width: 130px;
- 
-    display: flex;
-    justify-content: center;
-    gap: 78%;
- 
+.boxFotoColaboradores{
+    width: 115px;
+    height: 115px;
+    background-color: #07532e;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 12, 0);
+}
+.boxFotoColaboradores img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
 }
 
+.infoColaborador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
 
+.infoNomeColaborador{
+    font-size: large;
+}
+.infoNomeColaborador p{
+    font-size: 18px;
+    color: #004523;
+}
+
+.infoCargoColaborador{
+    font-size: large;
+}
+.infoCargoColaborador p{
+    font-size: 17px;
+    color: #565857;
+}
+
+.infoSetorColaborador{
+    font-size: large;
+}
+.infoSetorColaborador p{
+    font-size: 19px;
+    color: #000000;
+}
 
 /*-----footer-----*/
-footer {
+footer{
     width: 100%;
-    background-color: #504f4f;
+    background-color: #868686;
+
     margin-top: 2px;
     margin-bottom: 0px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 .footercenter{
-    width: 100%;
+    height: 90px;
+    width: 55%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.conteudofooter{
-    width: 60%;
+
+.localizacaoUnimed{
     display: flex;
-    justify-content: start;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    text-align: start;
     gap: 10px;
 }
-
-
-
-
-.imgiconlocconteudofooter{
+.iconLocUnimed img{
     width: 50px;
     height: 50px;
 }
-.txtendereco{
-    width: 400px;
+.txtLocalizacao{
+    color: white;
 }
-
-.f_imglogo{
-    width: 100%;
-    height: 100px;
-}
-
-.box_contato{
-    height: 95px;
-    width: 100%;
+.boxContatos{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    gap: 15px;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    
-    padding: 15px;
-    
+    align-items: center;
+    gap: 5px;
 }
-.txtcontato{
+.txtContatos{
     text-align: center;
+    color: white;
     font-weight: bold;
-    color: #ffffff;
 }
-.box_imgcontatos{
-    width: 18%;
+.iconsContatos{
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
 }
-.box_imgcontatos img{
-    width: 34px;
-    height: 34px;
-    border-radius: 4px;
+.iconsRedesSociais img{
+    width: 35px;
+    height: 35px;
     background-color: white;
+    border-radius: 5px;
 }
-
-.box_imgcontatos img:hover{
+.iconsRedesSociais img:hover{
     background-color: green;
-    transition: all .3s ease-in-out;
+    transition: all .3% ease-in-out;
 }
-
 
 .copyright{
     width: 100%;
     height: 30px;
-    background-color: #504f4f;
-    border: 1px solid white;
+    background-color: #868686;
+    border-top: 1px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: #616161;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     font-size: 12px;
     flex-wrap: nowrap;
     gap: 15px;
