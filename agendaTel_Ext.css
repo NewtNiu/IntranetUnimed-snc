@@ -1,0 +1,315 @@
+
+*{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+h1{
+    text-decoration: none;
+}
+
+/*--CORPO--*/
+body{
+    background-color: #ffffff;
+}
+
+/*-----HEADER-----*/
+header{
+    width: 100%;
+    height: 90px;
+    background-color: #107643;
+    padding: 5px;
+}
+header div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    gap: 15px;
+}
+
+.principal nav ul hr{
+    transform: rotate(90deg);
+    width: 20px;
+}
+
+/*Header Elementos*/
+.headerImgLogo{
+    height: 80px;
+}
+.headerBarraDePesquisa {
+    width: 600px;
+    height: 40px;
+    color: #1a1a1a;
+    border: 1px solid black;
+    border-radius: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.headerNomeUsuario {
+    font-size: 20px;
+}
+
+.linhaNomeUsuario{
+    transform: rotate(90deg);
+    width: 40px;
+}
+
+.headerImgUsuario {
+    height: 70px;
+    border-radius: 120%;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+/*-----NAVEGAÇÃO-----*/
+.navegacao {
+    width: 1200px;
+    height: 50px;
+    background-color: #107643;
+    border: 1px solid #000000;
+    border-radius: 3px;
+
+}
+/*Navegação Elementos*/
+
+.nav-list{
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li a{
+    letter-spacing: 1px;
+    justify-content: flex-start;
+    list-style-type: none;
+    color: #fff;
+    text-decoration: none;
+}
+
+li#nav {
+    padding: 10px 15px;
+    gap: 3px;
+}
+nav ul li a:hover {
+    color: #1fcc00;
+    transition: all .4s ease-in-out;
+}
+.pgatual {
+    background-color: #10452B;
+    border-radius: 7px;
+}
+.pgatual a:hover {
+    color: #ffffff;
+}
+
+
+/*TESTEE*/
+
+.principal{
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    background-color: #fff;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+.conteudo1{
+    height: 900px;
+    width: 95%;
+
+    margin-top: 10px;
+}
+
+
+.conteudo3{
+    height: 170px;
+    width: 100%;
+    background-color: #E0E5E0;
+    box-shadow: 0px 3px #BBBBBB;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.conteudo2{
+    background-color: #107643;
+    height: 150px;
+    width: 300px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 8px;
+}
+
+.internos{
+    height: 60px;
+    width: 270px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.externos{
+    height: 60px;
+    width: 270px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pgatual{
+    background-color: #10452B;
+    border-radius: 4px;
+}
+
+.barraPesquisaRamais{
+    border-left: 2px solid black;
+    height: 100px;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-left: 3%;
+}
+
+.barraPesquisaNome{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+
+.barraPesquisaTipo{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+
+.procurar{
+    width: 550px;
+    color: #107643;
+    letter-spacing: 1px;
+    font-weight: bold;
+    
+}
+
+.linhaHorizontal{
+    transform: rotate(180deg);
+    width: 250px;
+}
+
+.linhaVertical{
+    transform: rotate(90deg);
+    width: 40px;
+    height: 4px;
+    background-color: #000000;
+}
+
+/*-----footer-----*/
+footer{
+    width: 100%;
+    background-color: #868686;
+
+    margin-top: 2px;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footercenter{
+    height: 90px;
+    width: 55%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.localizacaoUnimed{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.iconLocUnimed img{
+    width: 50px;
+    height: 50px;
+}
+.txtLocalizacao{
+    color: white;
+}
+.boxContatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.txtContatos{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.iconsContatos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.iconsRedesSociais img{
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 5px;
+}
+.iconsRedesSociais img:hover{
+    background-color: green;
+    transition: all .3% ease-in-out;
+}
+
+.copyright{
+    width: 100%;
+    height: 30px;
+    background-color: #868686;
+    border-top: 1px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: #616161;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+

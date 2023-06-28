@@ -1,0 +1,418 @@
+/*Imports*/
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+/*Gerais*/
+*{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+h1{
+    text-decoration: none;
+}
+/*--CORPO--*/
+body{
+    background-color: #ffffff;
+}
+
+/*-----HEADER-----*/
+header{
+    width: 100%;
+    height: 90px;
+    background-color: #107643;
+    padding: 5px;
+}
+header div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    gap: 15px;
+}
+/*Header Elementos*/
+.headerImgLogo{
+    height: 80px;
+}
+.headerBarraDePesquisa {
+    width: 600px;
+    height: 40px;
+    color: #1a1a1a;
+    border: 1px solid black;
+    border-radius: 90px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.headerNomeUsuario {
+    font-size: 20px;
+}
+.linhaNomeUsuario{
+    transform: rotate(90deg);
+    width: 40px;
+}
+.headerImgUsuario {
+    height: 70px;
+    border-radius: 120%;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/*-----===CONTEUDO===-----*/
+
+/*--container--*/
+.conteudo{
+    width: 1020px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 10px auto 0;
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: white !important;
+}
+/*-----===NAVEGAÇÃO===-----*/
+.navegacao {
+    width: 100%;
+    height: 55px;
+    background-color: #2B8057;
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+/*Navegação Elementos*/
+.navegacao{
+    background-color: #107643;
+    height: 50px;
+    border-radius: 3px;
+}
+.nav-list{
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+nav ul li a{
+    letter-spacing: 1px;
+    justify-content: flex-start;
+    list-style-type: none;
+    color: #fff;
+    text-decoration: none;
+}
+li#nav {
+    padding: 10px 15px;
+    gap: 3px;
+}
+nav ul li a:hover {
+    color: #1fcc00;
+    transition: all .4s ease-in-out;
+}
+.pgatual {
+    background-color: #10452B;
+    border-radius: 7px;
+}
+.pgatual a:hover {
+    color: #ffffff;
+}
+div nav ul hr{
+    transform: rotate(90deg);
+    width: 20px;
+}
+
+/*-----===SIGLARIO===-----*/
+
+/*-----===PESQUISA SIGARIOS===-----*/
+.boxSiglas{
+    width: 100%;
+    height: 130px;
+    background-color: #E0E5E0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 1%;
+}
+.boxTiposSigSen{
+    width: 25%;
+    height: 120px;
+    background-color: #107643;
+    border-radius: 7px;
+    border: 2px solid #07532e;
+    margin-left: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.boxSiglas49{
+    /* background-color: red; */
+    width: 99%;
+    height: 49%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.paginaPesquisarPorSiglas{
+    width: 95%;
+    height: 80%;
+    background-color: #10452B;
+    border-radius: 7px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.paginaPesquisarPorSentenças :hover{
+    color: #76b852;
+}
+
+.divisaoSiglasSentenças{
+    background-color: white;
+    width: 95%;
+    transform: rotate(50%);
+}
+.boxSentenças49{
+    /* background-color: blue; */
+    width: 99%;
+    height: 49%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.paginaPesquisarPorSentenças{
+    width: 95%;
+    height: 80%;
+    /* background-color: brown; */
+    font-weight: bold;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divisaoTiposProcurar{
+    background-color: #10452B;
+    width: 4px;
+}
+.boxProcurarPor{
+    width: 72%;
+    height: 120px;
+    /* background-color: #a8ffd3; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 15px;
+}
+.pesquisarPorSentenças{
+    color: #07532e;
+    font-size: large;
+    font-weight: bold;
+}
+.searchSentenças{
+    width: 550px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 0px 15px 0px 10px;
+    color: black;
+}
+/*---===boxsiglario===---*/
+.boxsiglario{
+    width: 100%;
+    height: 500px;
+    background-color: #E7E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.headerSiglario{
+    width: 99%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.infoSiglarioHeader{
+    width: 20%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.descricaoHeader{
+    width: 55%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.usarHeader{
+    width: 20%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divisaoHeaderSiglario{
+    background-color: #919593;
+    height: 100%;
+    width: 5px;
+}
+.linhas{
+    width: 99%;
+    height: 7%;
+    background-color: #cfcece;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.itemsSiglario{
+    width: 20%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.descrição{
+    width: 55%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.usar{
+    width: 20%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divisaoSiglario{
+    background-color: #919593;
+    height: 100%;
+    width: 5px;
+}
+/*-----===FOOTER===-----*/
+footer{
+    width: 100%;
+    background-color: #868686;
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footercenter{
+    height: 90px;
+    width: 55%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.localizacaoUnimed{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.iconLocUnimed img{
+    width: 50px;
+    height: 50px;
+}
+.txtLocalizacao{
+    color: white;
+}
+.boxContatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.txtContatos{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.iconsContatos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.iconsRedesSociais img{
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 5px;
+}
+.iconsRedesSociais img:hover{
+    background-color: green;
+    transition: all .3% ease-in-out;
+}
+.copyright{
+    width: 100%;
+    height: 30px;
+    background-color: #868686;
+    border-top: 1px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: #616161;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: nowrap;
+    gap: 15px;
+}

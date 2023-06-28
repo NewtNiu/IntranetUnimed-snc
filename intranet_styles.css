@@ -9,7 +9,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 a{
     text-decoration: none;
 }
@@ -22,7 +21,7 @@ body{
     background-color: #ffffff;
 }
 
-/*-----HEADER-----*/
+/*-----===HEADER===-----*/
 header{
     width: 100%;
     height: 90px;
@@ -54,6 +53,10 @@ header div{
 }
 .headerNomeUsuario {
     font-size: 20px;
+}
+.linhaNomeUsuario{
+    transform: rotate(90deg);
+    width: 40px;
 }
 .headerImgUsuario {
     height: 70px;
@@ -89,7 +92,7 @@ header div{
     flex-wrap: nowrap;
 }
 
-/*-----SISTEMAS-----*/
+/*-----===SISTEMAS===-----*/
 .boxSistemas {
     width: 220px;
     /* height: 1020px; */
@@ -110,8 +113,8 @@ header div{
     padding: 12px 0px 12px 0px;
     text-align: left;
 }
-/*Sistemas Elementos*/
 
+/*Sistemas Elementos*/
 .blocosvpn{
     width: 92%;
     height: 40px;
@@ -145,11 +148,9 @@ header div{
 .blocossis:hover{
     width: 100%;
     background-image:linear-gradient(to right, #76b852, #8DC26F);
-    
 }
 .blocossis a{
     color: #E6E6E6;
-    
 }
 
 /*--container--*/
@@ -164,7 +165,7 @@ header div{
     gap: 10px;
 }
 
-/*-----NAVEGAÇÃO-----*/
+/*-----===NAVEGAÇÃO===-----*/
 .navegacao {
     width: 790px;
     height: 55px;
@@ -173,6 +174,7 @@ header div{
     border: 1px solid #000000;
     border-radius: 3px;
 }
+
 /*Navegação Elementos*/
 .navegacao{
     background-color: #107643;
@@ -208,8 +210,12 @@ nav ul li a:hover {
 .pgatual a:hover {
     color: #ffffff;
 }
+section nav ul hr{
+    transform: rotate(90deg);
+    width: 20px;
+}
 
-/*-----BANNER-----*/
+/*-----===BANNER===-----*/
 .banner {
     width: 790px;
     height: 250px;
@@ -223,13 +229,10 @@ nav ul li a:hover {
     height: 100%;
 }
 
-/*-----PRINCIPAIS-----*/
-
+/*-----===PRINCIPAIS===-----*/
 .principaisSistemas{
     width: 790px;
-    /* height: 400px; */
     background-color: #E6E6E6;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -238,12 +241,12 @@ nav ul li a:hover {
     align-content: center;
     gap: 14px;
 }
-/*Principais Elementos*/
 
+/*Principais Elementos*/
 .boxPainelDeGestaoSenior{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to left, #1D52A3, #081C61);
+    background-image:linear-gradient(to left, #1D52A3, #1f3993);
 
     border-radius: 4px;
     border: 2px solid #07123b;
@@ -254,10 +257,9 @@ nav ul li a:hover {
     flex-direction: column;
 }
 .boxPainelDeGestaoSenior img{
-    width: 120px;
+    width: 110px;
     height: 120px;
 }
-
 .boxSistemaDeGestao{
     width: 220px;
     height: 170px;
@@ -275,11 +277,10 @@ nav ul li a:hover {
     width: 120px;
     height: 120px;
 }
-
 .boxIntratarefas{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to left, #ff5100, #ffd000);
+    background-image:linear-gradient(to left, #f99363, #ffd000);
 
     border-radius: 4px;
     border: 2px solid #f1560e;
@@ -293,7 +294,6 @@ nav ul li a:hover {
     width: 120px;
     height: 120px;
 }
-
 .boxWebMail{
     width: 220px;
     height: 170px;
@@ -311,11 +311,10 @@ nav ul li a:hover {
     width: 120px;
     height: 120px;
 }
-
 .boxBlip{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to bottom, #1D9908, #13470a);
+    background-image:linear-gradient(to bottom, #1D9908, #529547);
 
     border-radius: 4px;
     border: 2px solid #10350a;
@@ -329,11 +328,10 @@ nav ul li a:hover {
     width: 120px;
     height: 120px;
 }
-
-.boxNutrição{
+.boxNutricao{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to right, #b35c5c, #883232);
+    background-image:linear-gradient(to right, #b35c5c, #9d4343);
 
     border-radius: 4px;
     border: 2px solid #6C2B2B;
@@ -343,12 +341,10 @@ nav ul li a:hover {
     align-items: center;
     flex-direction: column;
 }
-.boxNutrição img{
+.boxNutricao img{
     width: 120px;
     height: 120px;
 }
-
-
 .principais div a {
     font-size: 14px;
     display: flex;
@@ -361,12 +357,7 @@ nav ul li a:hover {
     justify-content: center;
 }   
 
-.principais div:hover{
-    background-color: #8DC26F;
-    transition: all .3s ease-in;
-}
-
-/*-----DATA-----*/
+/*-----===DATA===-----*/
 .data {
     width: 790px;
     height: 22px;
@@ -374,9 +365,10 @@ nav ul li a:hover {
     margin-bottom: 7px;
     border-radius: 3px;
 }
+
 /*Data Elementos*/
 
-/*-----ANIVERSARIANTES-----*/
+/*-----===ANIVERSARIANTES===-----*/
 /*Aniversariantes HEADER*/
 .headerAniversario{
     width: 1020px;
@@ -388,6 +380,7 @@ nav ul li a:hover {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 /*Aniversariantes HEADER elementos*/
 .iconHeaderAniversario_ADD{
     display: flex;
@@ -398,7 +391,6 @@ nav ul li a:hover {
     gap: 10px;
     margin-left: 15px;
 }
-
 .iconHeaderAniversario{
     width: 35px;
     height: 35px;
@@ -411,24 +403,21 @@ nav ul li a:hover {
     height: 100%;
     border-radius: 50%;
 }
-
 .iconHeaderAniversario_ADD p{
     font-weight: bold;
 }
-
 .listaCompleta{
     margin-right: 15px;
     font-weight: bold;
     text-decoration: underline;
     transition: all .10% ease-in-out;
 }
-
 .listaCompleta a:hover{
     color: rgb(199, 199, 199);
     transition: all .10% ease-in-out;
 }
 
-/*Aniversariantes*/
+/*-----===ANIVERSARIANTES===-----*/
 .boxAniversariantes {
     width: 1020px;
     height: 235px;
@@ -444,8 +433,8 @@ nav ul li a:hover {
     gap: 40px;
     margin-bottom: 7px;
 }
-/*Aniversariantes Elementos*/
 
+/*Aniversariantes Elementos*/
 .perfilAniversariante{
     width: 15%;
     height: 95%;
@@ -456,7 +445,6 @@ nav ul li a:hover {
     text-align: center;
     gap: 5px;
 }
-
 .boxFotoColaboradores{
     width: 115px;
     height: 115px;
@@ -469,7 +457,6 @@ nav ul li a:hover {
     height: 100%;
     border-radius: 50%;
 }
-
 .infoColaborador{
     display: flex;
     flex-direction: column;
@@ -477,7 +464,6 @@ nav ul li a:hover {
     justify-content: center;
     gap: 5px;
 }
-
 .infoNomeColaborador{
     font-size: large;
 }
@@ -485,7 +471,6 @@ nav ul li a:hover {
     font-size: 18px;
     color: #004523;
 }
-
 .infoCargoColaborador{
     font-size: large;
 }
@@ -493,7 +478,6 @@ nav ul li a:hover {
     font-size: 17px;
     color: #565857;
 }
-
 .infoSetorColaborador{
     font-size: large;
 }
@@ -502,7 +486,7 @@ nav ul li a:hover {
     color: #000000;
 }
 
-/*-----footer-----*/
+/*-----===FOOTER===-----*/
 footer{
     width: 100%;
     background-color: #868686;
@@ -524,7 +508,6 @@ footer{
     justify-content: space-between;
     align-items: center;
 }
-
 .localizacaoUnimed{
     display: flex;
     flex-direction: row;
@@ -568,7 +551,6 @@ footer{
     background-color: green;
     transition: all .3% ease-in-out;
 }
-
 .copyright{
     width: 100%;
     height: 30px;
