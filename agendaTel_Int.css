@@ -220,20 +220,28 @@ div nav ul hr{
     display: flex;
     flex-direction: row;
 }
-.boxProcurarPor{
-    width: 50%;
-}
 .txtprocurar{
     font-size: large;
     color:#07532e;
     font-weight: bold;
     text-align: start;
 }
+.boxProcurarPor{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
 .searchProcurarPor{
     width: 80%;
     height: 30%;
     border-radius: 6px;
     border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
 }
 .listaExelRamais a{
     color: #FF4D00;
@@ -242,5 +250,262 @@ div nav ul hr{
 }
 .boxProcurarSetor{ 
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+.selecioneSetor{
+    width: 50%;
+    height: 30%;
+    color: #000000;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+.selecioneSetor option{
+    color: #000000;
+}
+/*-----===LISTA AGENDA===-----*/
+.boxListaAgenda{
+    width: 100%;
+    height: 500px;
+    background-color: #E7E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.headerListaAgenda{
+    width: 99%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.infoHeaderSetor{
+    width: 32%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoNomeAgenda{
+    width: 32%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoRamal{
+    width: 32%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divisaoHeaderAgenda{
+    background-color: #919593;
+    height: 100%;
+    width: 4px;
+}
+.linhas{
+    width: 99%;
+    height: 7%;
+    background-color: #cfcece;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.setorAgendaInterno{
+    width: 32%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.nomeAgendaInterno{
+    width: 32%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.ramalAgendaInterno{
+    width: 32%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.divisaoAgenda{
+    background-color: #919593;
+    height: 100%;
+    width: 4px;
+}
+/*-----===Paginas Agenda===-----*/
+.boxPaginasAgenda{
+    width: 30%;
+    height: 40px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+.botaoPassarPgEsquerda{
+    width: 30px;
+    height: 30px;
+    color: #000000;
+    font-size: large;
+}
+.paginasAgendaAtual{
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: #07532e;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.paginasAgenda{
+    width: 30px;
+    height: 30px;
+    color: #07532e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.divisaoPaginacao{
+    background-color: #07532e;
+    height: 50%;
+    width: 3px;
+}
+.botaoPassarPgDireita{
+    width: 30px;
+    height: 30px;
+    color: #000000;
 }
 
+/*-----===FOOTER===-----*/
+footer{
+    width: 100%;
+    background-color: #868686;
+
+    margin-top: 10px;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footercenter{
+    height: 90px;
+    width: 55%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.localizacaoUnimed{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.iconLocUnimed img{
+    width: 50px;
+    height: 50px;
+}
+.txtLocalizacao{
+    color: white;
+}
+.boxContatos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.txtContatos{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.iconsContatos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.iconsRedesSociais img{
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 5px;
+}
+.iconsRedesSociais img:hover{
+    background-color: green;
+    transition: all .3% ease-in-out;
+}
+.copyright{
+    width: 100%;
+    height: 30px;
+    background-color: #868686;
+    border-top: 1px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-style: solid;
+    border-color: #616161;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    flex-wrap: nowrap;
+    gap: 15px;
+}

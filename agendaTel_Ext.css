@@ -1,4 +1,6 @@
-
+/*Imports*/
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+/*Gerais*/
 *{
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -6,14 +8,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 a{
     text-decoration: none;
 }
 h1{
     text-decoration: none;
 }
-
 /*--CORPO--*/
 body{
     background-color: #ffffff;
@@ -34,12 +34,6 @@ header div{
     align-content: center;
     gap: 15px;
 }
-
-.principal nav ul hr{
-    transform: rotate(90deg);
-    width: 20px;
-}
-
 /*Header Elementos*/
 .headerImgLogo{
     height: 80px;
@@ -50,36 +44,52 @@ header div{
     color: #1a1a1a;
     border: 1px solid black;
     border-radius: 90px;
+
     padding-left: 10px;
     padding-right: 10px;
 }
 .headerNomeUsuario {
     font-size: 20px;
 }
-
 .linhaNomeUsuario{
     transform: rotate(90deg);
     width: 40px;
 }
-
 .headerImgUsuario {
     height: 70px;
     border-radius: 120%;
     border: 2px solid rgb(0, 0, 0);
 }
 
+/*-----===CONTEUDO===-----*/
 
-/*-----NAVEGAÇÃO-----*/
+/*--container--*/
+.conteudo{
+    width: 1020px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 10px auto 0;
+    gap: 10px;
+    flex-wrap: wrap;
+    background-color: white !important;
+}
+/*-----===NAVEGAÇÃO===-----*/
 .navegacao {
-    width: 1200px;
-    height: 50px;
-    background-color: #107643;
+    width: 100%;
+    height: 55px;
+    background-color: #2B8057;
     border: 1px solid #000000;
     border-radius: 3px;
-
 }
 /*Navegação Elementos*/
-
+.navegacao{
+    background-color: #107643;
+    height: 50px;
+    border-radius: 3px;
+}
 .nav-list{
     min-height: 50px;
     display: flex;
@@ -94,7 +104,6 @@ nav ul li a{
     color: #fff;
     text-decoration: none;
 }
-
 li#nav {
     padding: 10px 15px;
     gap: 3px;
@@ -110,130 +119,361 @@ nav ul li a:hover {
 .pgatual a:hover {
     color: #ffffff;
 }
-
-
-/*TESTEE*/
-
-.principal{
-    display: flex;
-    width: 100%;
-    height: 1000px;
-    background-color: #fff;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
+div nav ul hr{
+    transform: rotate(90deg);
+    width: 20px;
 }
 
-
-.conteudo1{
-    height: 900px;
-    width: 95%;
-
-    margin-top: 10px;
-}
-
-
-.conteudo3{
-    height: 170px;
+/*-----===PESQUISA AGENDA===-----*/
+.boxPesquisaNumeros{
     width: 100%;
+    height: 130px;
     background-color: #E0E5E0;
-    box-shadow: 0px 3px #BBBBBB;
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
     flex-wrap: wrap;
+    gap: 1%;
 }
-
-
-.conteudo2{
+.boxRamaisIntExt{
+    width: 25%;
+    height: 120px;
     background-color: #107643;
-    height: 150px;
-    width: 300px;
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    border-radius: 8px;
-}
+    border-radius: 7px;
+    border: 2px solid #07532e;
+    margin-left: 4px;
 
-.internos{
-    height: 60px;
-    width: 270px;
-    margin-top: 5px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.externos{
-    height: 60px;
-    width: 270px;
-    margin-bottom: 5px;
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.boxInternos47{
+ /* background-color: red; */
+    width: 99%;
+    height: 49%;
 
-#pgatual{
-    background-color: #10452B;
-    border-radius: 4px;
-}
-
-.barraPesquisaRamais{
-    border-left: 2px solid black;
-    height: 100px;
-    width: 800px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-left: 3%;
 }
-
-.barraPesquisaNome{
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
-}
-
-
-.barraPesquisaTipo{
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
-    
-}
-
-.procurar{
-    width: 550px;
-    color: #107643;
-    letter-spacing: 1px;
+.paginaPesquisarInterenos{
+    width: 95%;
+    height: 80%;
+    /* background-color: brown; */
     font-weight: bold;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.linhaHorizontal{
-    transform: rotate(180deg);
-    width: 250px;
+.divisaoInternosExternos{
+    background-color: white;
+    width: 95%;
+    transform: rotate(50%);
 }
 
-.linhaVertical{
-    transform: rotate(90deg);
-    width: 40px;
-    height: 4px;
-    background-color: #000000;
+.boxExternos47{
+ /* background-color: blue; */
+    width: 99%;
+    height: 49%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.paginaPesquisarExternos{
+    width: 95%;
+    height: 80%;
+    background-color: #10452B;
+    border-radius: 7px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/*-----footer-----*/
+.divisaoNumerosPesquisa{
+    background-color: #10452B;
+    width: 4px;
+}
+
+.boxSearchsRamaisExternos{
+    width: 70%;
+    height: 95%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+}
+.boxProcurarPorSetor{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+.txtprocurar{
+    font-size: large;
+    color:#07532e;
+    font-weight: bold;
+    text-align: start;
+}
+.boxProcurarPor{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+.searchProcurarPor{
+    width: 80%;
+    height: 30%;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+}
+.boxProcurarTipo{ 
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+.selecioneTipos{
+    width: 50%;
+    height: 30%;
+    color: #000000;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+.selecioneTipos option{
+    color: #000000;
+}
+/*-----===LISTA AGENDA===-----*/
+.boxListaAgenda{
+    width: 100%;
+    height: 550px;
+    background-color: #E7E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+.headerListaAgenda{
+    width: 99%;
+    height: 7%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.infoHeaderTipo{
+    width: 15%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoHeaderNome{
+    width: 17%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoSetor{
+    width: 27%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoTelefoneColaborador{
+    width: 12%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoCelularColaborador{
+    width: 12%;
+    height: 100%;
+    background-color: #107643;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divisaoHeaderAgenda{
+    background-color: #919593;
+    height: 100%;
+    width: 4px;
+}
+.linhas{
+    width: 99%;
+    height: 7%;
+    background-color: #cfcece;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.InfoTipo{
+    width: 15%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.infoNomeColaborador{
+    width: 17%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+}
+.infoSetorColaborador{
+    width: 27%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+}
+.infoBodyTelefoneColaborador{
+    width: 12%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.InfoCelularColaborador{
+    width: 12%;
+    height: 100%;
+    color: black;
+    border-radius: 5px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+}
+.divisaoAgenda{
+    background-color: #919593;
+    height: 100%;
+    width: 4px;
+}
+/*-----===Paginas Agenda===-----*/
+.boxPaginasAgenda{
+    width: 30%;
+    height: 40px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+.botaoPassarPgEsquerda{
+    width: 30px;
+    height: 30px;
+    color: #000000;
+    font-size: large;
+}
+.paginasAgendaAtual{
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: #07532e;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.paginasAgenda{
+    width: 30px;
+    height: 30px;
+    color: #07532e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.divisaoPaginacao{
+    background-color: #07532e;
+    height: 50%;
+    width: 3px;
+}
+.botaoPassarPgDireita{
+    width: 30px;
+    height: 30px;
+    color: #000000;
+}
+
+/*-----===FOOTER===-----*/
 footer{
     width: 100%;
     background-color: #868686;
 
-    margin-top: 2px;
+    margin-top: 10px;
     margin-bottom: 0px;
 
     display: flex;
@@ -250,7 +490,6 @@ footer{
     justify-content: space-between;
     align-items: center;
 }
-
 .localizacaoUnimed{
     display: flex;
     flex-direction: row;
@@ -294,7 +533,6 @@ footer{
     background-color: green;
     transition: all .3% ease-in-out;
 }
-
 .copyright{
     width: 100%;
     height: 30px;
@@ -312,4 +550,3 @@ footer{
     flex-wrap: nowrap;
     gap: 15px;
 }
-

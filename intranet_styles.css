@@ -23,6 +23,7 @@ body{
 
 /*-----===HEADER===-----*/
 header{
+    user-select: none;
     width: 100%;
     height: 90px;
     background-color: #107643;
@@ -170,7 +171,7 @@ header div{
     width: 790px;
     height: 55px;
     background-color: #2B8057;
-
+    user-select: none;
     border: 1px solid #000000;
     border-radius: 3px;
 }
@@ -222,6 +223,7 @@ section nav ul hr{
     background-color: #2B8057;
     border: 1px solid #000000;
     border-radius: 3px;
+    user-select: none;
 }
 /*Banners Elementos*/
 .banner img {
@@ -240,6 +242,7 @@ section nav ul hr{
     flex-wrap: wrap;
     align-content: center;
     gap: 14px;
+    user-select: none;
 }
 
 /*Principais Elementos*/
@@ -257,7 +260,7 @@ section nav ul hr{
     flex-direction: column;
 }
 .boxPainelDeGestaoSenior img{
-    width: 110px;
+    width: 90px;
     height: 120px;
 }
 .boxSistemaDeGestao{
@@ -280,10 +283,10 @@ section nav ul hr{
 .boxIntratarefas{
     width: 220px;
     height: 170px;
-    background-image:linear-gradient(to left, #f99363, #ffd000);
+    background-image:linear-gradient(to left, #f0c756, #ffd000);
 
     border-radius: 4px;
-    border: 2px solid #f1560e;
+    border: 2px solid #e7ab29;
 
     display: flex;
     align-items: center;
@@ -366,9 +369,6 @@ section nav ul hr{
     border-radius: 3px;
 }
 
-/*Data Elementos*/
-
-/*-----===ANIVERSARIANTES===-----*/
 /*Aniversariantes HEADER*/
 .headerAniversario{
     width: 1020px;
@@ -379,6 +379,7 @@ section nav ul hr{
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
+    user-select: none;
 }
 
 /*Aniversariantes HEADER elementos*/
@@ -390,6 +391,7 @@ section nav ul hr{
     justify-content: center;
     gap: 10px;
     margin-left: 15px;
+    user-select: none;
 }
 .iconHeaderAniversario{
     width: 35px;
@@ -422,7 +424,7 @@ section nav ul hr{
     width: 1020px;
     height: 235px;
     background-color: #E7E7E7;
-
+    user-select: none;
     border-radius: 0px 0px 7px 7px;
 
     display: flex;
@@ -463,6 +465,7 @@ section nav ul hr{
     align-items: center;
     justify-content: center;
     gap: 5px;
+    user-select: auto;
 }
 .infoNomeColaborador{
     font-size: large;
@@ -514,10 +517,12 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 10px;
+
 }
 .iconLocUnimed img{
     width: 50px;
     height: 50px;
+    user-select: none;
 }
 .txtLocalizacao{
     color: white;
@@ -528,6 +533,7 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 5px;
+    user-select: none;
 }
 .txtContatos{
     text-align: center;
@@ -540,6 +546,7 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 5px;
+
 }
 .iconsRedesSociais img{
     width: 35px;
@@ -567,4 +574,5 @@ footer{
     font-size: 12px;
     flex-wrap: nowrap;
     gap: 15px;
+    user-select: none;
 }
