@@ -62,7 +62,6 @@ header div{
 }
 
 /*-----===CONTEUDO===-----*/
-
 /*--container--*/
 .conteudo{
     width: 1020px;
@@ -123,176 +122,116 @@ div nav ul hr{
     transform: rotate(90deg);
     width: 20px;
 }
-
-/*-----===SIGLARIO===-----*/
-
-/*-----===PESQUISA SIGARIOS===-----*/
-.boxSiglas{
+/*-----===HEADER DOCUMENTOS===-----*/
+.boxHeaderDocumentos{
     width: 100%;
-    height: 130px;
-    background-color: #E0E5E0;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    gap: 1%;
-}
-.boxTiposSigSen{
-    width: 25%;
-    height: 120px;
-    background-color: #107643;
-    border-radius: 7px;
-    border: 2px solid #07532e;
-    margin-left: 4px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.boxSiglas49{
-    /* background-color: red; */
-    width: 99%;
-    height: 49%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.paginaPesquisarPorSiglas{
-    width: 95%;
-    height: 80%;
-    /* background-color: brown; */
-    font-weight: bold;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.paginaPesquisarPorSiglas :hover{
-    color: #76b852;
-}
-.divisaoSiglasSentenças{
-    background-color: white;
-    width: 95%;
-    transform: rotate(50%);
-}
-.boxSentenças49{
-    /* background-color: blue; */
-    width: 99%;
-    height: 49%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.paginaPesquisarPorSentenças{
-    width: 95%;
-    height: 80%;
-    background-color: #10452B;
-    border-radius: 7px;
-    font-weight: bold;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.divisaoTiposProcurar{
-    background-color: #10452B;
-    width: 4px;
-}
-.boxProcurarPor{
-    width: 72%;
-    height: 120px;
-    /* background-color: #a8ffd3; */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 15px;
-}
-.pesquisarPorSentenças{
-    color: #07532e;
-    font-size: large;
-    font-weight: bold;
-}
-.searchSentenças{
-    width: 550px;
     height: 40px;
-    border: 1px solid black;
+    background-color: #0b8649;
     border-radius: 7px;
-    padding: 0px 15px 0px 10px;
-    color: black;
-}
-/*---===boxsiglario===---*/
-.boxsiglario{
-    width: 100%;
-    height: 50px;
- 
+    box-shadow: 2px 2px 2px #044424;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-}
-.headerSiglario{
-    width: 99%;
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-
-.descricaoHeader{
-    width: 100%;
-    height: 100%;
-    background-color: #107643;
-    border-radius: 5px;
-    font-size: large;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+/*-----===DOCUMENTOS===-----*/
+.boxCorpoDocumentos{
+    width: 1020px;
 
-/*Documentos*/
-
-.documents{
-    height: 400px;
-    width: 100%;
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
-    
+    gap: 20px;
 }
-
-.documents div{
-    color: black;
-}
-
-
 .boxDocumentos{
-    height: 80px;
-    width: 300px;
+    width: 32%;
+    height: 100px;
     background-color: #D9D9D9;
+    border-radius: 7px;
+    border: 2px solid #b4b3b3;
+    text-align: center;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: center;
-    font-size: 13px;
-    border: 1px solid black;
-    box-shadow: 0px 3px #BBBBBB;
+    align-items: center;
 }
 
+.conteudoBoxDocumentos{
+    color: #252525;
+    cursor: help;    
+}
+
+.conteudoBoxDocumentos:hover{
+    color: #000000;
+    transition: 0.7s;
+    font-size: 17px;
+}
+
+#documentosConsultas{
+    border: 2px solid #0EAC00;
+}
+#documentosConsultas:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
+
+#programasDeGerenciamento{
+    border: 2px solid #0c8800;
+}
+#programasDeGerenciamento:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
+
+#programaMelhoriaDeQualidade{
+    border: 2px solid #24911a;
+}
+#programaMelhoriaDeQualidade:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
+
+#planejamentoEstrategico{
+    border: 2px solid #2f6b2a;
+}
+#planejamentoEstrategico:hover{
+    border: 2px solid rgb(18, 85, 4);
+}
+
+#captacoesInstitutoUnimed{
+    border: 2px solid #12d800;
+}
+#captacoesInstitutoUnimed:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
+
+#nucleoDeGovernancaCorporativa{
+    border: 2px solid #0EAC00;
+}
+#nucleoDeGovernancaCorporativa:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
+
+#unimedPersonal{
+    border: 2px solid #137e0a;
+}
+#unimedPersonal:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
+
+#comed{
+    border: 2px solid #1f8815;
+}
+#comed:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
+
+#tecnologiaDaInformacao{
+    border: 2px solid #268d1d;
+}
+#tecnologiaDaInformacao:hover{
+    border: 2px solid rgb(16, 49, 7);
+}
 
 /*-----===FOOTER===-----*/
 footer{
