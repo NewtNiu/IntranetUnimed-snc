@@ -136,6 +136,7 @@ div nav ul hr{
     align-content: center;
     flex-wrap: wrap;
     gap: 1%;
+    box-shadow: 0px 3px 3px #a0a0a0;
 }
 .boxRamaisIntExt{
     width: 25%;
@@ -205,7 +206,7 @@ div nav ul hr{
 }
 
 .boxSearchsRamaisExternos{
-    width: 70%;
+    width: 72%;
     height: 95%;
 
     display: flex;
@@ -264,14 +265,16 @@ div nav ul hr{
 /*-----===LISTA AGENDA===-----*/
 .boxListaAgenda{
     width: 100%;
-    height: 550px;
+    height: 500px;
     background-color: #E7E5E5;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     gap: 10px;
+    box-shadow: 0px 3px 3px #a0a0a0;
 }
 .headerListaAgenda{
     width: 99%;

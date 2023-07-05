@@ -138,6 +138,7 @@ div nav ul hr{
     align-content: center;
     flex-wrap: wrap;
     gap: 1%;
+    box-shadow: 0px 3px 3px #a0a0a0;
 }
 .boxTiposSigSen{
     width: 25%;
@@ -241,6 +242,7 @@ div nav ul hr{
     align-items: center;
     flex-wrap: nowrap;
     gap: 10px;
+    box-shadow: 0px 3px 3px #a0a0a0;
 }
 .headerSiglario{
     width: 99%;

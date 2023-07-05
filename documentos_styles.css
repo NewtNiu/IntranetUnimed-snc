@@ -25,6 +25,7 @@ header{
     height: 90px;
     background-color: #107643;
     padding: 5px;
+    user-select: none;
 }
 header div{
     display: flex;
@@ -50,6 +51,7 @@ header div{
 }
 .headerNomeUsuario {
     font-size: 20px;
+    user-select: text;
 }
 .linhaNomeUsuario{
     transform: rotate(90deg);
@@ -64,7 +66,7 @@ header div{
 /*-----===CONTEUDO===-----*/
 /*--container--*/
 .conteudo{
-    width: 1020px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,6 +90,7 @@ header div{
     background-color: #107643;
     height: 50px;
     border-radius: 3px;
+    user-select: none;
 }
 .nav-list{
     min-height: 50px;
@@ -133,114 +136,92 @@ div nav ul hr{
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    user-select: none;
 }
-/*-----===DOCUMENTOS===-----*/
-.boxCorpoDocumentos{
-    width: 1020px;
 
+
+
+
+/*-----===DOCUMENTOS===-----*/
+
+.boxCorpoDocumentos{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 22px;
+    background-color: white;
 }
 .boxDocumentos{
-    width: 32%;
-    height: 100px;
+    width: 30%;
+    min-height: 80px;
     background-color: #D9D9D9;
     border-radius: 7px;
     border: 2px solid #b4b3b3;
-    text-align: center;
+    
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    cursor: help;
 }
 
 .conteudoBoxDocumentos{
-    color: #252525;
-    cursor: help;    
+    color: #252525; 
+    padding: 20px;
 }
 
-.conteudoBoxDocumentos:hover{
-    color: #000000;
-    transition: 0.7s;
-    font-size: 17px;
+.conteudoBoxDocumentos ul li{
+    color: #EC7900;
 }
 
-#documentosConsultas{
+.boxCorpoDocumentos a:hover{
+    background-color: #565857;
+}
+
+.boxCorpoDocumentos a{
+    background-color: #EC7900;
+    font-size: 12px;
+    
+}
+
+.boxCorpoDocumentos p{
+    color: black;
+    font-size: 16px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.boxCorpoDocumentos summary{
+    color: #07532e;
+    text-align: center;
+}
+
+.sumconteudoBoxDocumentos{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #07532e;
+    text-decoration: none;
+}
+
+#boxDocsBorda{
     border: 2px solid #0EAC00;
 }
-#documentosConsultas:hover{
-    border: 2px solid rgb(16, 49, 7);
-}
 
-#programasDeGerenciamento{
-    border: 2px solid #0c8800;
-}
-#programasDeGerenciamento:hover{
-    border: 2px solid rgb(16, 49, 7);
-}
-
-#programaMelhoriaDeQualidade{
-    border: 2px solid #24911a;
-}
-#programaMelhoriaDeQualidade:hover{
-    border: 2px solid rgb(16, 49, 7);
-}
-
-#planejamentoEstrategico{
-    border: 2px solid #2f6b2a;
-}
-#planejamentoEstrategico:hover{
-    border: 2px solid rgb(18, 85, 4);
-}
-
-#captacoesInstitutoUnimed{
-    border: 2px solid #12d800;
-}
-#captacoesInstitutoUnimed:hover{
-    border: 2px solid rgb(16, 49, 7);
-}
-
-#nucleoDeGovernancaCorporativa{
-    border: 2px solid #0EAC00;
-}
-#nucleoDeGovernancaCorporativa:hover{
-    border: 2px solid rgb(16, 49, 7);
-}
-
-#unimedPersonal{
-    border: 2px solid #137e0a;
-}
-#unimedPersonal:hover{
-    border: 2px solid rgb(16, 49, 7);
-}
-
-#comed{
-    border: 2px solid #1f8815;
-}
-#comed:hover{
-    border: 2px solid rgb(16, 49, 7);
-}
-
-#tecnologiaDaInformacao{
-    border: 2px solid #268d1d;
-}
-#tecnologiaDaInformacao:hover{
-    border: 2px solid rgb(16, 49, 7);
+#boxDocsBorda:hover{
+    border: 2px solid rgb(16, 49, 7); 
 }
 
 /*-----===FOOTER===-----*/
 footer{
     width: 100%;
     background-color: #868686;
-
-    margin-top: 10px;
-    margin-bottom: 0px;
-
+    position: absolute;
+    margin-top: 30%;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,11 +246,13 @@ footer{
 .iconLocUnimed img{
     width: 50px;
     height: 50px;
+    user-select: none;
 }
 .txtLocalizacao{
     color: white;
 }
 .boxContatos{
+    user-select: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -314,4 +297,5 @@ footer{
     font-size: 12px;
     flex-wrap: nowrap;
     gap: 15px;
+    user-select: none;
 }
