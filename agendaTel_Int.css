@@ -22,9 +22,10 @@ body{
 /*-----HEADER-----*/
 header{
     width: 100%;
-    height: 90px;
-    background-color: #107643;
-    padding: 5px;
+    height: 75px;
+    background-color: #0B6939;
+    padding: 4px;
+    
 }
 header div{
     display: flex;
@@ -32,21 +33,32 @@ header div{
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
-    gap: 15px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    height: 65px;
 }
 /*Header Elementos*/
 .headerImgLogo{
-    height: 80px;
+    height: 60px;
 }
 .headerBarraDePesquisa {
     width: 600px;
     height: 40px;
     color: #1a1a1a;
     border: 1px solid black;
-    border-radius: 90px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 
     padding-left: 10px;
     padding-right: 10px;
+
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.usuario{
+    gap: 11px;
 }
 .headerNomeUsuario {
     font-size: 20px;
@@ -56,10 +68,37 @@ header div{
     width: 40px;
 }
 .headerImgUsuario {
-    height: 70px;
+    height: 55px;
     border-radius: 120%;
     border: 2px solid rgb(0, 0, 0);
 }
+
+
+.searchbtn{
+    background-color: #06532d;
+    border: 1px solid black;
+    width: 80px;
+    height: 40px;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+}
+
+.searchbtn:hover{
+    background-color: #22ca54;
+    border: 1px solid #22ca54;
+    font-weight: bold;
+    background-color: rgba(255, 255, 13, 0.712);
+}
+
+.searched {
+    color: #000000;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 13, 0.712);
+  }
 
 /*-----===CONTEUDO===-----*/
 
@@ -173,6 +212,10 @@ div nav ul hr{
     align-items: center;
 }
 
+.paginaPesquisarPorSentenças :hover{
+    color: #76b852;
+}
+
 .divisaoInternosExternos{
     background-color: white;
     width: 95%;
@@ -206,8 +249,8 @@ div nav ul hr{
 }
 
 .boxSearchsRamaisInternos{
-    width: 72%;
-    height: 95%;
+    width: 70%;
+    height: 120px;
 
     display: flex;
     flex-direction: row;
@@ -272,7 +315,6 @@ div nav ul hr{
     width: 100%;
     height: 500px;
     background-color: #E7E5E5;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -280,7 +322,6 @@ div nav ul hr{
     flex-wrap: nowrap;
     gap: 10px;
     box-shadow: 0px 3px 3px #a0a0a0;
-
 }
 .headerListaAgenda{
     width: 99%;
@@ -378,6 +419,7 @@ div nav ul hr{
     height: 100%;
     width: 4px;
 }
+
 /*-----===Paginas Agenda===-----*/
 .boxPaginasAgenda{
     width: 30%;
@@ -512,4 +554,159 @@ footer{
     font-size: 12px;
     flex-wrap: nowrap;
     gap: 15px;
+}
+
+/* --MODAL-- */
+.modal{
+    width: 600px;
+    height: 500px;
+    background-color: white;
+    border: 3px solid #004523;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+.internoModel{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+}
+.infoAcessibilidade{
+    width: 100%;
+    height: 33%;
+    /* border: 1px solid #000000; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: space-between;
+
+}
+.txtAcessibilidade{
+    width: 48%;
+    height: 100%;
+    /* border: 1px solid #1D9908; */
+    text-align: justify;
+}
+.txtAcessibilidade p{
+    color: #000000;
+    font-size: medium;
+}
+.divisaoInfoAcessibilidade{
+    width: 1px;
+    height: 100%;
+    color: #004523;
+    transform: rotate(0deg);
+}
+.txtcomoUsar{
+    width: 48%;
+    height: 100%;
+    /* border: 1px solid #990808; */
+    text-align: justify;
+}
+.txtcomoUsar p{
+    color: #000000;
+    font-size: medium;
+}
+.txtcomoUsar h3{
+    color: #000000;
+    font-size: medium;
+}
+.boxAtalhos{
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    gap: 7px;
+}
+.divisaoAcessibilidade{
+    width: 100%;
+    height: 1px;
+    background-color: #004523;
+    transform: rotate(0deg);
+}
+.linhaAcessibilidade{
+    width: 100%;
+    height: 22%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+}
+.botaoAcessibilidade{
+    width: 20%;
+    height: 100%;
+    background-color: #004523;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.txtbotaoAcessibilidade{
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btnSair{
+    height: 45px;
+    width: 45px;
+    background-color: #219744;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnSair a{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.btnSair a:hover{
+    background-color: #22ca54;
 }
