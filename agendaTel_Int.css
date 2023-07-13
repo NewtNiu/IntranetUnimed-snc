@@ -8,26 +8,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-a{
+a, h1{
     text-decoration: none;
 }
-h1{
-    text-decoration: none;
-}
-/*--CORPO--*/
-body{
-    background-color: #ffffff;
-}
-
-/*-----HEADER-----*/
+/*-----===HEADER===-----*/
 header{
     width: 100%;
     height: 75px;
-    background-color: #0B6939;
+    background-color: #00985D;
     padding: 4px;
-    
 }
-header div{
+.header{
+    height: 65px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -35,70 +27,87 @@ header div{
     align-content: center;
     margin-top: 4px;
     margin-bottom: 5px;
-    height: 65px;
 }
 /*Header Elementos*/
 .headerImgLogo{
     height: 60px;
+    border: 2px solid white;
+    border-top-left-radius: 13px ;
+    border-bottom-left-radius: 13px ;
+    border-top-right-radius: 13px
+}
+.form{
+    width: 40%;
+    display: flex;
 }
 .headerBarraDePesquisa {
     width: 600px;
     height: 40px;
     color: #1a1a1a;
-    border: 1px solid black;
+    border: 0 none;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-
+    box-shadow: 0 0 0 0;
+    outline: 0;
     padding-left: 10px;
     padding-right: 10px;
-
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
 }
-
+.searchbtn{
+    width: 80px;
+    height: 40px;
+    background-color: #00985D;
+    border: 2px solid white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.searchbtn:hover{
+    background-color: #32AC7B;
+}
+.searched {
+    background-color: rgba(255, 255, 13, 0.712);
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 2px;
+}
 .usuario{
     gap: 11px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 .headerNomeUsuario {
-    font-size: 20px;
-}
-.linhaNomeUsuario{
-    transform: rotate(90deg);
-    width: 40px;
+    font-size: 19px;
 }
 .headerImgUsuario {
     height: 55px;
-    border-radius: 120%;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid white;
+    border-radius: 50%;
 }
-
-
-.searchbtn{
-    background-color: #06532d;
-    border: 1px solid black;
-    width: 80px;
-    height: 40px;
-
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    
+.btnSair{
+    height: 44px;
+    width: 44px;
+    background-color: #00995d;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
 }
-
-.searchbtn:hover{
-    background-color: #22ca54;
-    border: 1px solid #22ca54;
+.btnSair a{
+    width: 100%;
+    height: 100%;
     font-weight: bold;
-    background-color: rgba(255, 255, 13, 0.712);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.searched {
-    color: #000000;
-    font-weight: bold;
-    padding: 3px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 13, 0.712);
-  }
+.btnSair a:hover{
+    background-color: #32AC7B;
+}
 
 /*-----===CONTEUDO===-----*/
 
@@ -119,13 +128,12 @@ header div{
 .navegacao {
     width: 100%;
     height: 55px;
-    background-color: #2B8057;
-    border: 1px solid #000000;
+    background-color: #00985D;
+    border: 2px solid #00524C;
     border-radius: 3px;
 }
 /*Navegação Elementos*/
 .navegacao{
-    background-color: #107643;
     height: 50px;
     border-radius: 3px;
 }
@@ -148,15 +156,15 @@ li#nav {
     gap: 3px;
 }
 nav ul li a:hover {
-    color: #1fcc00;
+    color: #00524C;
     transition: all .4s ease-in-out;
 }
 .pgatual {
-    background-color: #10452B;
+    background-color: #00524C;
     border-radius: 7px;
 }
 .pgatual a:hover {
-    color: #ffffff;
+    color: white;
 }
 div nav ul hr{
     transform: rotate(90deg);
@@ -167,7 +175,7 @@ div nav ul hr{
 .boxPesquisaRamais{
     width: 100%;
     height: 130px;
-    background-color: #E0E5E0;
+    background-color: #F5F2EB;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -175,16 +183,15 @@ div nav ul hr{
     align-content: center;
     flex-wrap: wrap;
     gap: 1%;
-    box-shadow: 0px 3px 3px #a0a0a0;
+    box-shadow: 0px 3px 3px #EAE2D8;
 }
 .boxRamaisIntExt{
     width: 25%;
     height: 120px;
-    background-color: #107643;
+    background-color: #00985D;
     border-radius: 7px;
-    border: 2px solid #07532e;
+    border: 2px solid #00524C;
     margin-left: 4px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,7 +201,6 @@ div nav ul hr{
  /* background-color: red; */
     width: 99%;
     height: 49%;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -203,30 +209,25 @@ div nav ul hr{
 .paginaPesquisarInterenos{
     width: 95%;
     height: 80%;
-    background-color: #10452B;
+    background-color: #00524C;
     border-radius: 7px;
     font-weight: bold;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.paginaPesquisarPorSentenças :hover{
-    color: #76b852;
+.paginaPesquisarExternos a:hover{
+    color: #00524C;
 }
-
 .divisaoInternosExternos{
     background-color: white;
     width: 95%;
     transform: rotate(50%);
 }
-
 .boxExternos47{
  /* background-color: blue; */
     width: 99%;
     height: 49%;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -237,21 +238,17 @@ div nav ul hr{
     height: 80%;
     /* background-color: brown; */
     font-weight: bold;
-    
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .divisaoRamaisPesquisa{
-    background-color: #10452B;
+    background-color: #00524C;
     width: 4px;
 }
-
 .boxSearchsRamaisInternos{
     width: 70%;
     height: 120px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -266,7 +263,7 @@ div nav ul hr{
 }
 .txtprocurar{
     font-size: large;
-    color:#07532e;
+    color:#00524C;
     font-weight: bold;
     text-align: start;
 }
@@ -288,7 +285,7 @@ div nav ul hr{
     color: black;
 }
 .listaExelRamais a{
-    color: #FF4D00;
+    color: #F57921;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -303,25 +300,26 @@ div nav ul hr{
 .selecioneSetor{
     width: 50%;
     height: 30%;
-    color: #000000;
+    color: black;
     border-radius: 6px;
     border: 1px solid black;
 }
 .selecioneSetor option{
-    color: #000000;
+    color: black;
 }
+
 /*-----===LISTA AGENDA===-----*/
 .boxListaAgenda{
     width: 100%;
     height: 500px;
-    background-color: #E7E5E5;
+    background-color: #F5F2EB;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
     gap: 10px;
-    box-shadow: 0px 3px 3px #a0a0a0;
+    box-shadow: 0px 3px 3px #EAE2D8;
 }
 .headerListaAgenda{
     width: 99%;
@@ -336,7 +334,7 @@ div nav ul hr{
 .infoHeaderSetor{
     width: 32%;
     height: 100%;
-    background-color: #107643;
+    background-color: #00985D;
     border-radius: 5px;
     font-size: large;
     font-weight: bold;
@@ -347,7 +345,7 @@ div nav ul hr{
 .infoNomeAgenda{
     width: 32%;
     height: 100%;
-    background-color: #107643;
+    background-color: #00985D;
     border-radius: 5px;
     font-size: large;
     font-weight: bold;
@@ -358,7 +356,7 @@ div nav ul hr{
 .infoRamal{
     width: 32%;
     height: 100%;
-    background-color: #107643;
+    background-color: #00985D;
     border-radius: 5px;
     font-size: large;
     font-weight: bold;
@@ -367,14 +365,14 @@ div nav ul hr{
     align-items: center;
 }
 .divisaoHeaderAgenda{
-    background-color: #919593;
+    background-color: black;
     height: 100%;
     width: 4px;
 }
 .linhas{
     width: 99%;
     height: 7%;
-    background-color: #cfcece;
+    background-color: #E6DCD0;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -415,7 +413,7 @@ div nav ul hr{
     font-size: medium;
 }
 .divisaoAgenda{
-    background-color: #919593;
+    background-color: black;
     height: 100%;
     width: 4px;
 }
@@ -424,7 +422,8 @@ div nav ul hr{
 .boxPaginasAgenda{
     width: 30%;
     height: 40px;
-    background-color: #D9D9D9;
+    background-color: #EAE2D8;
+    border: 2px solid #DEC4BB;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -437,14 +436,14 @@ div nav ul hr{
 .botaoPassarPgEsquerda{
     width: 30px;
     height: 30px;
-    color: #000000;
+    color: black;
     font-size: large;
 }
 .paginasAgendaAtual{
     width: 30px;
     height: 30px;
     color: white;
-    background-color: #07532e;
+    background-color: #00524C;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -455,7 +454,7 @@ div nav ul hr{
 .paginasAgenda{
     width: 30px;
     height: 30px;
-    color: #07532e;
+    color: #00524C;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -463,33 +462,36 @@ div nav ul hr{
     font-weight: bold;
 }
 .divisaoPaginacao{
-    background-color: #07532e;
+    background-color: #00524C;
     height: 50%;
     width: 3px;
 }
 .botaoPassarPgDireita{
     width: 30px;
     height: 30px;
-    color: #000000;
+    color: black;
 }
 
 /*-----===FOOTER===-----*/
 footer{
     width: 100%;
-    background-color: #868686;
-
-    margin-top: 10px;
+    background-color: white;
+    margin-top: 2px;
     margin-bottom: 0px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-top: 1px solid;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+   
+    border-color: #00524C;
 }
 .footercenter{
     height: 90px;
     width: 55%;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -501,13 +503,14 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 10px;
+
 }
 .iconLocUnimed img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
-.txtLocalizacao{
-    color: white;
+.txtLocalizacao a p{
+    color: #00524C;
 }
 .boxContatos{
     display: flex;
@@ -515,10 +518,11 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 5px;
+    
 }
 .txtContatos{
     text-align: center;
-    color: white;
+    color: #00524C;
     font-weight: bold;
 }
 .iconsContatos{
@@ -527,6 +531,7 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 5px;
+    margin-top: 5px;
 }
 .iconsRedesSociais img{
     width: 35px;
@@ -535,19 +540,19 @@ footer{
     border-radius: 5px;
 }
 .iconsRedesSociais img:hover{
-    background-color: green;
+    background-color: #00985D;
     transition: all .3% ease-in-out;
 }
 .copyright{
     width: 100%;
     height: 30px;
-    background-color: #868686;
-    border-top: 1px;
+    background-color: white;
+    border-top: 2px;
     border-right: 0px;
     border-left: 0px;
     border-bottom: 0px;
     border-style: solid;
-    border-color: #616161;
+    border-color: #CDDDDC;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -555,13 +560,16 @@ footer{
     flex-wrap: nowrap;
     gap: 15px;
 }
+.copyright p{
+    color: #00524C;
+}
 
 /* --MODAL-- */
 .modal{
     width: 600px;
     height: 500px;
     background-color: white;
-    border: 3px solid #004523;
+    border: 3px solid #00524C;
     border-radius: 10px;
     display: none;
     justify-content: center;
@@ -576,26 +584,22 @@ footer{
 .internoModel{
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     gap: 2px;
-
 }
 .infoAcessibilidade{
     width: 100%;
     height: 33%;
     /* border: 1px solid #000000; */
-
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: space-between;
-
 }
 .txtAcessibilidade{
     width: 48%;
@@ -604,13 +608,13 @@ footer{
     text-align: justify;
 }
 .txtAcessibilidade p{
-    color: #000000;
+    color: black;
     font-size: medium;
 }
 .divisaoInfoAcessibilidade{
     width: 1px;
     height: 100%;
-    color: #004523;
+    color: #00524C;
     transform: rotate(0deg);
 }
 .txtcomoUsar{
@@ -620,11 +624,11 @@ footer{
     text-align: justify;
 }
 .txtcomoUsar p{
-    color: #000000;
+    color: black;
     font-size: medium;
 }
 .txtcomoUsar h3{
-    color: #000000;
+    color: black;
     font-size: medium;
 }
 .boxAtalhos{
@@ -639,7 +643,7 @@ footer{
 .divisaoAcessibilidade{
     width: 100%;
     height: 1px;
-    background-color: #004523;
+    background-color: #00524C;
     transform: rotate(0deg);
 }
 .linhaAcessibilidade{
@@ -655,15 +659,14 @@ footer{
 .botaoAcessibilidade{
     width: 20%;
     height: 100%;
-    background-color: #004523;
+    background-color: #00524C;
     border-radius: 15px;
-    border: 1px solid #000000;
+    border: 1px solid black;
     font-size: 25px;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .txtbotaoAcessibilidade{
     font-size: 25px;
@@ -686,27 +689,3 @@ footer{
 
 
 
-
-.btnSair{
-    height: 45px;
-    width: 45px;
-    background-color: #219744;
-    border: 1px solid black;
-    border-radius: 50%;
-    margin-left: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btnSair a{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-.btnSair a:hover{
-    background-color: #22ca54;
-}

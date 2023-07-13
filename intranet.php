@@ -19,15 +19,30 @@
 
 <!--HEADER-->
     <header>
-        <div>
+        <div class="header">
             <a href="https://www.unimed.coop.br/site/web/chapeco"><img draggable="false" name="" id="" class="headerImgLogo" src="img/logo_unimed.png" alt=""></a>
 
         
-            <div class="form">
+            <section class="form">
                 <input type="text" name="barraDePesquisa" id="search-input" class="headerBarraDePesquisa" accesskey="p" placeholder="Faça a sua Pesquisa..." type="search">
                 <button class="searchbtn" onclick="searchText()">Pesquisar</button>
-            </div>
-            
+            </section>
+
+            <section name="boxvpn" id="" class="boxvpn">
+                <div name="boxVpnColaboradores" id="" class="boxVpnColaboradores">
+                    <a href="">
+                        VPN Colaboradores
+                    </a>
+                </div>
+                <div name="boxVpnManual" id="" class="boxVpnManual">
+                    <a href="">
+                        Manual de Instalação
+                    </a>
+                </div>
+
+            </section>
+
+
             <div name="usuario" id="usuario" class="usuario">
                 <h1 name="nomeUsuario" id="nomeusuario" class="headerNomeUsuario">
                     <?php
@@ -54,10 +69,7 @@
 <!--sistemas-->
             <section name="sistemas" class="boxSistemas">
 
-                <div name="vpnColaboradores" id="" class="blocosvpn"><a href="https://arquivos.unimedchapeco.coop.br/s/TRJC7Je7jjiy4eE/download/FortiClientVPNSetup_7.0.7.0345_x64.exe" title="Vpn Colaboradores" target="_new">Vpn Colaboradores</a></div>
-
-                <div name="manualDeInstalaçãoVpn" id="" class="blocosvpn"><a href="https://www.unimedchapeco.com.br/intranet/index/download?local=vpn&arquivo=manual-vpn-unimed-chapeco.pdf" title="Manual de Instalação VPN" target="_new">Manual de Instalação VPN</a></div>
-
+                
 
                 <div name="admAppCoop" id="" class="blocossis"><a href="http://www.unimedchapeco.com.br/appcoop" title="Adm App Coop." target="_new">Adm App Coop.</a></div>
 
@@ -322,13 +334,13 @@
             <p name="txtContatos" id="" class="txtContatos">Siga nossas redes sociais:</p>
             <section name="iconsContatos" id="" class="iconsContatos">
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/facebook_logo.png" alt="iconfacebook"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/iconfacebook.png" alt="iconfacebook"></a></div>
 
-                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/instagram_logo.png" alt="iconintagram"></a></div>
+                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/iconinstagram.png" alt="iconintagram"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/youtube_logo.png" alt="iconyoutube"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/iconyoutube.png" alt="iconyoutube"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/linkedin_logo.png" alt="iconlikedin"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/iconlinkedin.png" alt="iconlikedin"></a></div>
             
             </section>
        </section>
