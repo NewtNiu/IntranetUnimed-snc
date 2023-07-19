@@ -161,93 +161,7 @@
     </section>
 <!--lista agenda-->
     <section name="boxListaAgenda" id="" class="boxListaAgenda">
-        <section name="headerListaAgenda" id="" class="headerListaAgenda">
-            <div name="infoHeaderSetor" id="" class="infoHeaderSetor">SETOR</div>
-            <hr class="divisaoHeaderAgenda">
-            <div name="infoNomeAgenda" id="" class="infoNomeAgenda">NOME</div>
-            <hr class="divisaoHeaderAgenda">
-            <div name="infoRamal" id="" class="infoRamal">RAMAL</div>
-        </section>
-
-        <section name="linha1" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha2" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha3" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha4" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha5" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha6" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha7" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha8" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha9" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
-
-        <section name="linha10" id="" class="linhas">
-            <div name="setorAgendaInterno" id="" class="setorAgendaInterno">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="nomeAgendaInterno" id="" class="nomeAgendaInterno">SICLANO</div>
-            <hr class="divisaoAgenda">
-            <div name="ramalAgendaInterno" id="" class="ramalAgendaInterno">4444</div>
-        </section>
+        
     </section>
 
     <section name="boxPaginasAgenda" id="" class="boxPaginasAgenda">
@@ -287,13 +201,14 @@
             <p name="txtContatos" id="" class="txtContatos">Siga nossas redes sociais:</p>
             <section name="iconsContatos" id="" class="iconsContatos">
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/iconfacebook.png" alt="iconfacebook"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/ico_facebook.svg" alt="iconfacebook"></a></div>
 
-                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/iconinstagram.png" alt="iconintagram"></a></div>
+                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/ico_instagram.svg" alt="iconintagram"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/iconyoutube.png" alt="iconyoutube"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/ico_youtube.svg" alt="iconyoutube"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/iconlinkedin.png" alt="iconlikedin"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/ico_linkedin.svg" alt="iconlikedin"></a></div>
+            
             
             </section>
        </section>

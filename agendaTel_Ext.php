@@ -153,163 +153,9 @@
     </section>
 <!--lista agenda-->
     <section name="boxListaAgenda" id="" class="boxListaAgenda">
-        <section name="headerListaAgenda" id="" class="headerListaAgenda">
-            <div name="infoHeaderTipo" id="" class="infoHeaderTipo">TIPO</div>
-            <hr class="divisaoHeaderAgenda">
-            <div name="infoHeaderNome" id="" class="infoHeaderNome">NOME</div>
-            <hr class="divisaoHeaderAgenda">
-            <div name="infoSetor" id="" class="infoSetor">SETOR</div>
-            <hr class="divisaoHeaderAgenda">
-
-            <div name="infoTelefoneColaborador" id="" class="infoTelefoneColaborador">TELEFONE</div>
-            <hr class="divisaoHeaderAgenda">
-            <div name="infoCelularColaborador" id="" class="infoCelularColaborador">CELULAR</div>
-            <hr class="divisaoHeaderAgenda">
-            <div name="infoCelularColaborador2" id="" class="infoCelularColaborador">CELULAR 2</div>
-
-        </section>
-
-        <section name="linha1" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha2" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha3" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha4" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha5" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-    
-        <section name="linha6" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha7" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha8" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha9" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
-
-        <section name="linha10" id="" class="linhas">
-            <div name="InfoTipo" id="" class="InfoTipo">COLABORADOR</div>
-            <hr class="divisaoAgenda">
-            <div name="infoNomeColaborador" id="" class="infoNomeColaborador">FULANO</div>
-            <hr class="divisaoAgenda">
-            <div name="infoSetorColaborador" id="" class="infoSetorColaborador">TI</div>
-            <hr class="divisaoAgenda">
-            <div name="infoBodyTelefoneColaborador" id="" class="infoBodyTelefoneColaborador">3322-1759</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelularColaborador" id="" class="InfoCelularColaborador">49 98844-5533</div>
-            <hr class="divisaoAgenda">
-            <div name="InfoCelular2Colaborador" id="" class="InfoCelularColaborador">49 91122-3344</div>
-        </section>
+        
     </section>
-
+<!-- -----===Paginas Agenda===----- -->
     <section name="boxPaginasAgenda" id="" class="boxPaginasAgenda">
             <input value="" title="pgEsquerda" name="botaoPassarPgEsquerda" id="" class="botaoPassarPgEsquerda" type="button" placeholder="oi">
             <hr class="divisaoPaginacao">
@@ -347,13 +193,14 @@
             <p name="txtContatos" id="" class="txtContatos">Siga nossas redes sociais:</p>
             <section name="iconsContatos" id="" class="iconsContatos">
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/iconfacebook.png" alt="iconfacebook"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/ico_facebook.svg" alt="iconfacebook"></a></div>
 
-                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/iconinstagram.png" alt="iconintagram"></a></div>
+                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/ico_instagram.svg" alt="iconintagram"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/iconyoutube.png" alt="iconyoutube"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/ico_youtube.svg" alt="iconyoutube"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/iconlinkedin.png" alt="iconlikedin"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/ico_linkedin.svg" alt="iconlikedin"></a></div>
+            
             
             </section>
        </section>

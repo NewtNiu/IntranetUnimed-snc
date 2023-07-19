@@ -224,15 +224,15 @@
 
 <!--data--> 
                 <div name="data" class="data">
-                <p id="clock">
-                    <?php
-                        date_default_timezone_set('America/Sao_Paulo');
-                        $date = date('d/m/Y');
-                        $time = date('H:i:s');
-                        print $date . '  ' . $time;
-                    ?>
-                </p>
-            </div>
+                    <p id="clock">
+                        <?php
+                            date_default_timezone_set('America/Sao_Paulo');
+                            $date = date('d/m/Y');
+                            $time = date('H:i:s');
+                            print $date . '  ' . $time;
+                        ?>
+                    </p>
+                </div>
         </section>
     </section>
 
@@ -334,13 +334,13 @@
             <p name="txtContatos" id="" class="txtContatos">Siga nossas redes sociais:</p>
             <section name="iconsContatos" id="" class="iconsContatos">
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/iconfacebook.png" alt="iconfacebook"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/ico_facebook.svg" alt="iconfacebook"></a></div>
 
-                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/iconinstagram.png" alt="iconintagram"></a></div>
+                    <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/ico_instagram.svg" alt="iconintagram"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/iconyoutube.png" alt="iconyoutube"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/ico_youtube.svg" alt="iconyoutube"></a></div>
 
-                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/iconlinkedin.png" alt="iconlikedin"></a></div>
+                    <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/ico_linkedin.svg" alt="iconlikedin"></a></div>
             
             </section>
        </section>
