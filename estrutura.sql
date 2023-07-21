@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS TIPO_CARGO
     PRIMARY KEY (CD_TIPO_CARGO)
 );
 
-Renomeação do Banco
+/*Chaves Estrangeiras*/
 
 ALTER TABLE USUARIO
 ADD CONSTRAINT FK_CD_DEPARTAMENTO_USER
@@ -198,8 +198,9 @@ VALUES
 ('niumargirardi', '@uni@227', 'Niumar', 'Girardi', 'M', '2006-02-24', 'Jovem Aprendiz TI', 46, 'C'),
 ('lucaswillenbring', '@uni@227', 'Lucas', 'Davila Willenbring', 'M', '2005-02-19', 'Jovem Aprendiz TI', 46, 'C');
 
+/* POVOAÇÃO USUÁRIOS */
 
-
+/*JA POVOADO/EXECUTADO PRIMEIRA PARTE */
 INSERT INTO USUARIO (NOME, SOBRENOME, USUARIO, SENHA, SEXO, DATA_NASCIMENTO, CARGO, CD_DEPARTAMENTO, CD_TIPO_CARGO)
 VALUES
 ('Fernanda', 'Guimarães', 'fernandaguimaraes', '@uni@227', 'I', '1987-10-22', 'Assistente Administrativo de Suprimentos', 1, 'C'),

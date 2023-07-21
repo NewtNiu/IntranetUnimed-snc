@@ -3,9 +3,11 @@
     if(empty($_SESSION)){
         print "<script>location.href='index.php';</script>";
     }
+
+    include("config.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -136,20 +138,40 @@
 
                 <div name="boxProcurarPor" id="" class="boxProcurarPor">
                     <div name="txtProcurarPor" id="" class="txtprocurar">Procurar Por:</div>
-                    <input name="searchProcurarPor" id="" class="searchProcurarPor" type="search" placeholder="Procurar Por">
+                        <input name="searchProcurarPor" id="searchProcurarPor" class="searchProcurarPor" type="search" value="<?php if(isset($_GET['search'])) echo $_GET['search']; ?>"placeholder="Procurar Por">
+                        
+                            <script>
+                            var search = document.getElementById('searchProcurarPor');
+
+                            search.addEventListener("keydown", function(event) {
+                                if (event.key === "Enter") 
+                                {
+                                    searchData();
+                                }
+                            });
+
+                            function searchData()
+                            {
+                                window.location = 'agendaTel_Int.php?search='+search.value;
+                            }
+                            </script>
+                    
                 </div>
 
                 <div name="boxProcurarSetor" id="" class="boxProcurarSetor">
                     <div name="txtProcurarSetor" id="" class="txtprocurar">Setor:</div>
+
                     <select title="setor" name="setor" id="" class="selecioneSetor" placeholder="Setor">
-                        <option value="999">Setor</option>
-                        <option value="1">Almoxarifado</option>
-                        <option value="2">Farmacia Centra</option>
-                        <option value="3">Laboratorio</option>
-                        <option value="4">Manutenção</option>
-                        <option value="5">RH</option>
-                        <option value="6">TI</option>
+                        <option value="">SETOR</option>
+                        <?php
+                        $sql_code_setor =  "SELECT * FROM DEPARTAMENTO 
+                                            ORDER BY NOME_DEPARTAMENTO ASC";
+                        $sql_query_setor = $conn->query($sql_code_setor) or die($conn->error);
+                        while($setor = $sql_query_setor->fetch_assoc()) { ?>
+                        <option <?php if(isset($_POST['setor']) && $_POST['setor'] == $setor['CD_DEPARTAMENTO']) echo "selected" ?>value="<?php echo $setor['CD_DEPARTAMENTO']; ?>"> <?php echo $setor['NOME_DEPARTAMENTO']; ?> </option>
+                        <?php } ?>
                     </select>
+                    
                 </div>
             </div>
             <div name="listaExelRamais" id="" class="listaExelRamais">
@@ -161,7 +183,60 @@
     </section>
 <!--lista agenda-->
     <section name="boxListaAgenda" id="" class="boxListaAgenda">
-        
+    <!-- tabela -->
+     <table class="tabelaAgendaInternos">
+        <!-- header tabela -->
+        <tr class="linhaHeader">
+            <th class="colunaHeaderSetor">SETOR</th>
+            <th class="colunaHeaderNome">NOME</th>
+            <th class="colunaHeaderRamal">RAMAL</th>
+        </tr>
+        <!-- corpo tabela -->
+
+            <?php
+            if (empty($_GET['search'])) {
+                ?>
+            <tr class="linhaCorpo">
+            <td class="linhaCorpo" colspan="3">Digite algo para pesquisar...</td>
+            </tr>
+            <?php
+            } else {
+                $pesquisa = $_GET['search'];
+                $sql_code_pesquisa =   "SELECT 
+                                            UPPER(U.NOME) AS NOME, 
+                                            UPPER(U.SOBRENOME) AS SOBRENOME,
+                                            UPPER(D.NOME_DEPARTAMENTO) AS SETOR,
+                                            U.CD_MATRICULA
+                                        FROM USUARIO U
+                                            JOIN DEPARTAMENTO D
+                                                ON U.CD_DEPARTAMENTO = D.CD_DEPARTAMENTO
+                                        WHERE NOME LIKE '%$pesquisa%'
+                                        OR SOBRENOME LIKE '%$pesquisa%'
+                                            ORDER BY NOME ASC
+                                            LIMIT 10";
+                
+                $sql_query_pesquisa = $conn->query($sql_code_pesquisa) or die("ERRO ao consultar! " . $conn->error);
+                
+                if ($sql_query_pesquisa->num_rows == 0) {
+                    ?>
+                <tr class="linhaCorpo">
+                <td class="linhaCorpo" colspan="3">Nenhum resultado encontrado...</td>
+                </tr>
+                <?php
+                } else {
+                    while($dados = $sql_query_pesquisa->fetch_assoc()) {
+                        ?>
+                            <tr class="linhaCorpo">
+                            <td class="colunaCorpoSetor"><?php echo $dados['SETOR'] ?> </td>
+                            <td class="colunaCorpoNome"><?php echo $dados['NOME'] . " " . $dados['SOBRENOME']; ?> </td>
+                            <td class="colunaCorpoRamal">RAMAL</td>
+                            </tr>
+                        <?php
+                    }
+                }
+            } ?>
+             
+     </table>
     </section>
 
     <section name="boxPaginasAgenda" id="" class="boxPaginasAgenda">

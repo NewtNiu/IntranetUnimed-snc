@@ -76,6 +76,7 @@ header{
     align-items: center;
     justify-content: center;
     text-align: center;
+    
 }
 .boxVpnColaboradores{
     width: 49%;
@@ -87,7 +88,8 @@ header{
     border-right: 1px solid #00524C;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    
+
+
 }
 .boxVpnColaboradores:hover{
     background-color: #00524C;
