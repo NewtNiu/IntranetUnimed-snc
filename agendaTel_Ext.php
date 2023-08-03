@@ -16,24 +16,31 @@
 <body>
 <!--HEADER-->
 <header>
-    <div class="header">
-        <a href="https://www.unimed.coop.br/site/web/chapeco"><img draggable="false" name="" id="" class="headerImgLogo" src="img/logo_unimed.png" alt=""></a>
-        <div class="form">
-            <input type="text" name="barraDePesquisa" id="search-input" class="headerBarraDePesquisa" accesskey="p" placeholder="Faça a sua Pesquisa..." type="search">
-            <button class="searchbtn" onclick="searchText()">Pesquisar</button>
-        </div>
-        <div name="usuario" id="usuario" class="usuario">
-            <h1 name="nomeUsuario" id="nomeusuario" class="headerNomeUsuario">
-                <?php
-                 print $_SESSION["nome"];
-                ?>
+        <div class="header">
+            <a href="https://www.unimed.coop.br/site/web/chapeco"><img draggable="false" name="" id="" class="headerImgLogo" src="img/logo_unimed.png" alt=""></a>
+
+        
+            <div class="form">
+                <input type="text" name="barraDePesquisa" id="search-input" class="headerBarraDePesquisa" accesskey="p" placeholder="Faça a sua Pesquisa..." type="search">
+                <button class="searchbtn" onclick="searchText()">Pesquisar</button>
+            </div>
+            
+            <div name="usuario" id="usuario" class="usuario">
+                <h1 name="nomeUsuario" id="nomeusuario" class="headerNomeUsuario">
+                    <?php
+                        print $_SESSION["nome"];
+                    ?>
                 </h1>
+
                 <img draggable="false" name="imgUsuario" id="imgusuario" class="headerImgUsuario" src="img/perfil.png" alt="">
+
                 <?php
                     print "<button accesskey='s' class='btnSair'><a href='logout.php'>Sair</a></button>";
                 ?>
+            </div>
+
+            
         </div> 
-    </div> 
    </header>
 <!--CONTEUDO-->
 <div name="conteudo" id="conteudo" class="conteudo">
@@ -126,10 +133,12 @@
         <hr class="divisaoNumerosPesquisa">
         <div name="boxSearchsRamaisExternos" id="" class="boxSearchsRamaisExternos">
             <div name="boxProcurarPorSetor" id="" class="boxProcurarPorSetor">
+
                 <div name="boxProcurarPor" id="" class="boxProcurarPor">
                     <div name="txtProcurarPor" id="" class="txtprocurar">Procurar Por:</div>
                     <input name="searchProcurarPor" id="" class="searchProcurarPor" type="search" placeholder="Nome">
                 </div>
+
                 <div name="boxProcurarTipo" id="" class="boxProcurarTipo">
                     <div name="txtProcurartipos" id="" class="txtprocurar">Tipo:</div>
                     <select title="tipos" name="" id="" class="selecioneTipos" placeholder="Setor">
@@ -144,7 +153,7 @@
     </section>
 <!--lista agenda-->
     <section name="boxListaAgenda" id="" class="boxListaAgenda">
-
+        
     </section>
 <!-- -----===Paginas Agenda===----- -->
     <section name="boxPaginasAgenda" id="" class="boxPaginasAgenda">
@@ -163,6 +172,7 @@
             <input value="" title="pgEsquerda" name="botaoPassarPgEsquerda" id="" class="botaoPassarPgDireita" type="button" placeholder="d">
     </section>
 </div>
+
 <!--FOOTER-->
 <footer>
     <div name="footercenter" id="" class="footercenter">
@@ -178,16 +188,24 @@
             </a>
             </div>
        </section>
+
        <section name="boxContatos" id="" class="boxContatos">
             <p name="txtContatos" id="" class="txtContatos">Siga nossas redes sociais:</p>
             <section name="iconsContatos" id="" class="iconsContatos">
+
                     <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.facebook.com/unimed.chapeco" title="facebook" target="_new"><img draggable="false" src="img/ico_facebook.svg" alt="iconfacebook"></a></div>
+
                     <div name="iconsRedesSociais" id="" class="iconsRedesSociais"><a href="https://www.instagram.com/unimed.chapeco/" title="instagram" target="_new"><img draggable="false" src="img/ico_instagram.svg" alt="iconintagram"></a></div>
+
                     <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://www.youtube.com/channel/UCGeen4o2xuq4eAakeyv8LyA" title="youtube" target="_new"><img draggable="false" src="img/ico_youtube.svg" alt="iconyoutube"></a></div>
+
                     <div name="iconsredessociais" id="" class="iconsRedesSociais"><a href="https://br.linkedin.com/company/unimed-chapeco" title="linkedin" target="_new"><img draggable="false" src="img/ico_linkedin.svg" alt="iconlikedin"></a></div>
+            
+            
             </section>
        </section>
     </div>
+
     <section name="copyright" class="copyright">
         <a href="#" title="Política de utilização da rede" target="_new"><p name="politicaderede" style="font-weight: bold">Política de utilização da rede</p></a>
         <p>|</p>
@@ -197,3 +215,5 @@
 <script src="main.js"></script>
 </body>
 </html>
+
+<!-- name="" id="" class="" -->

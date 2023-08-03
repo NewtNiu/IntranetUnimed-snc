@@ -138,41 +138,50 @@
 
                 <div name="boxProcurarPor" id="" class="boxProcurarPor">
                     <div name="txtProcurarPor" id="" class="txtprocurar">Procurar Por:</div>
-                        <input name="searchProcurarPor" id="searchProcurarPor" class="searchProcurarPor" type="search" value="<?php if(isset($_GET['search'])) echo $_GET['search']; ?>"placeholder="Procurar Por">
-                        
-                            <script>
-                            var search = document.getElementById('searchProcurarPor');
-
-                            search.addEventListener("keydown", function(event) {
-                                if (event.key === "Enter") 
-                                {
-                                    searchData();
-                                }
-                            });
-
-                            function searchData()
-                            {
-                                window.location = 'agendaTel_Int.php?search='+search.value;
-                            }
-                            </script>
+                        <input name="searchProcurarPor" id="searchProcurarPor" class="searchProcurarPor" type="search" value="<?php if(isset($_GET['search_pesquisa'])) echo $_GET['search_pesquisa']; ?>"placeholder="Procurar Por">
                     
                 </div>
 
                 <div name="boxProcurarSetor" id="" class="boxProcurarSetor">
                     <div name="txtProcurarSetor" id="" class="txtprocurar">Setor:</div>
 
-                    <select title="setor" name="setor" id="" class="selecioneSetor" placeholder="Setor">
-                        <option value="">SETOR</option>
+                    <select title="setor" name="setor" id="setor" class="selecioneSetor" placeholder="Setor">
+                        <option value="00">TODOS</option>
                         <?php
                         $sql_code_setor =  "SELECT * FROM DEPARTAMENTO 
                                             ORDER BY NOME_DEPARTAMENTO ASC";
                         $sql_query_setor = $conn->query($sql_code_setor) or die($conn->error);
                         while($setor = $sql_query_setor->fetch_assoc()) { ?>
-                        <option <?php if(isset($_POST['setor']) && $_POST['setor'] == $setor['CD_DEPARTAMENTO']) echo "selected" ?>value="<?php echo $setor['CD_DEPARTAMENTO']; ?>"> <?php echo $setor['NOME_DEPARTAMENTO']; ?> </option>
+                        <option <?php if(isset($_GET['setor']) && $_GET['setor'] == $setor['CD_DEPARTAMENTO']) echo "selected" ?>value="<?php echo $setor['CD_DEPARTAMENTO']; ?>"> <?php echo $setor['NOME_DEPARTAMENTO']; ?> </option>
                         <?php } ?>
                     </select>
+                    </div>
                     
-                </div>
+                    <script>
+                        var search_pesquisa = document.getElementById('searchProcurarPor');
+
+                        search_pesquisa.addEventListener("keydown", function(event) {
+                            if (event.key === "Enter") 
+                            {
+                                searchPesquisa();
+                            }
+                        });
+
+                        var search_setor = document.getElementById('setor');
+
+                        search_setor.addEventListener("keydown", function(event) {
+                            if (event.key === "Enter") 
+                            {
+                                searchPesquisa();
+                            }
+                        });
+
+                        function searchPesquisa()
+                            {
+                                window.location = 'agendaTel_Int.php?search_pesquisa='+search_pesquisa.value+'&search_setor='+search_setor.value+'&pagina=1';
+                            }
+                     </script>
+
             </div>
             <div name="listaExelRamais" id="" class="listaExelRamais">
                 <a href="https://www.unimedchapeco.com.br/intranet/telefones/interno/download">
@@ -194,65 +203,123 @@
         <!-- corpo tabela -->
 
             <?php
-            if (empty($_GET['search'])) {
+
+            $pagina = 1;
+
+            if(isset($_GET['pagina'])){
+                $pagina = filter_input(INPUT_GET, "pagina", FILTER_VALIDATE_INT);
+            }                    
+                if(!$pagina || empty($_GET['pagina'])){
+                    $pagina = 1;
+                }
+
+            $limite = 10;
+
+            $inicio = ($pagina * $limite) - $limite;
+
+            ?>
+
+            <?php
+            if (empty($_GET['search_setor']) || !isset($_GET['search_setor'])) {
                 ?>
             <tr class="linhaCorpo">
-            <td class="linhaCorpo" colspan="3">Digite algo para pesquisar...</td>
+            <td class="linhaCorpo" colspan="3">Digite ou selecione algo para pesquisar e pressione a tecla 'Enter'.</td>
             </tr>
             <?php
             } else {
-                $pesquisa = $_GET['search'];
-                $sql_code_pesquisa =   "SELECT 
-                                            UPPER(U.NOME) AS NOME, 
-                                            UPPER(U.SOBRENOME) AS SOBRENOME,
-                                            UPPER(D.NOME_DEPARTAMENTO) AS SETOR,
-                                            U.CD_MATRICULA
-                                        FROM USUARIO U
-                                            JOIN DEPARTAMENTO D
-                                                ON U.CD_DEPARTAMENTO = D.CD_DEPARTAMENTO
-                                        WHERE NOME LIKE '%$pesquisa%'
-                                        OR SOBRENOME LIKE '%$pesquisa%'
-                                            ORDER BY NOME ASC
-                                            LIMIT 10";
-                
-                $sql_query_pesquisa = $conn->query($sql_code_pesquisa) or die("ERRO ao consultar! " . $conn->error);
-                
-                if ($sql_query_pesquisa->num_rows == 0) {
-                    ?>
-                <tr class="linhaCorpo">
-                <td class="linhaCorpo" colspan="3">Nenhum resultado encontrado...</td>
-                </tr>
-                <?php
-                } else {
-                    while($dados = $sql_query_pesquisa->fetch_assoc()) {
-                        ?>
-                            <tr class="linhaCorpo">
-                            <td class="colunaCorpoSetor"><?php echo $dados['SETOR'] ?> </td>
-                            <td class="colunaCorpoNome"><?php echo $dados['NOME'] . " " . $dados['SOBRENOME']; ?> </td>
-                            <td class="colunaCorpoRamal">RAMAL</td>
-                            </tr>
-                        <?php
+                $setor_pesquisa = $_GET['search_setor'];
+                $pesquisa = $_GET['search_pesquisa'];
+                $sql_code_pesquisa = "SELECT 
+                                        UPPER(U.NOME) AS NOME, 
+                                        UPPER(U.SOBRENOME) AS SOBRENOME,
+                                        UPPER(D.NOME_DEPARTAMENTO) AS SETOR,
+                                        I.NUM_TELEFONE AS RAMAL
+                                    FROM USUARIO U
+                                        JOIN DEPARTAMENTO D
+                                            ON U.CD_DEPARTAMENTO = D.CD_DEPARTAMENTO
+                                        JOIN TELEFONE_INTERNO I
+                                            ON U.CD_MATRICULA = I.CD_MATRICULA
+                                    WHERE I.CD_TIPO_TELEFONE = 'R'";
+            
+            if($setor_pesquisa == 00 && isset($_GET['search_pesquisa'])){
+                $sql_code_pesquisa .= " AND (U.NOME LIKE '%$pesquisa%' OR SOBRENOME LIKE '%$pesquisa%')";
+            }
+                    if($setor_pesquisa <> 00 && !empty($_GET['search_pesquisa'])) {
+                        $sql_code_pesquisa .= " AND (U.NOME LIKE '%$pesquisa%' OR SOBRENOME LIKE '%$pesquisa%') AND U.CD_DEPARTAMENTO = $setor_pesquisa";
                     }
-                }
-            } ?>
+                        if($setor_pesquisa <> 00 && empty($_GET['search_pesquisa'])){
+                            $sql_code_pesquisa .= " AND U.CD_DEPARTAMENTO = $setor_pesquisa";
+                        }
+                            if($setor_pesquisa == 00 && empty($_GET['search_pesquisa'])){
+                                $sql_code_pesquisa = "SELECT 
+                                                        UPPER(U.NOME) AS NOME, 
+                                                        UPPER(U.SOBRENOME) AS SOBRENOME,
+                                                        UPPER(D.NOME_DEPARTAMENTO) AS SETOR,
+                                                        I.NUM_TELEFONE AS RAMAL
+                                                    FROM USUARIO U
+                                                        JOIN DEPARTAMENTO D
+                                                            ON U.CD_DEPARTAMENTO = D.CD_DEPARTAMENTO
+                                                        JOIN TELEFONE_INTERNO I
+                                                            ON U.CD_MATRICULA = I.CD_MATRICULA
+                                                    WHERE I.CD_TIPO_TELEFONE = 'R'";
+                            }
+                            
+            $registros = $conn->query($sql_code_pesquisa)->num_rows;
+            $total_paginas = ceil($registros/$limite);
+            $sql_code_pesquisa .= " ORDER BY NOME ASC LIMIT $inicio, $limite";
+            $sql_query_pesquisa = $conn->query($sql_code_pesquisa) or die("ERRO ao consultar! " . $conn->error);
+            
+            if ($sql_query_pesquisa->num_rows == 0) {
+                ?>
+            <tr class="linhaCorpo">
+            <td class="linhaCorpo" colspan="3">Nenhum resultado encontrado...</td>
+            </tr>
+            <?php
+            } else {
+                while($dados = $sql_query_pesquisa->fetch_assoc()) {
+                    ?>
+                        <tr class="linhaCorpo">
+                        <td class="colunaCorpoSetor"><?php echo $dados['SETOR']; ?> </td>
+                        <td class="colunaCorpoNome"><?php echo $dados['NOME'] . " " . $dados['SOBRENOME']; ?> </td>
+                        <td class="colunaCorpoRamal"><?php echo $dados['RAMAL']; ?></td>
+                        </tr>
+                    <?php
+                    }
+                } 
+            }
+                    ?>
              
      </table>
     </section>
 
-    <section name="boxPaginasAgenda" id="" class="boxPaginasAgenda">
-            <input value="" title="pgEsquerda" name="botaoPassarPgEsquerda" id="" class="botaoPassarPgEsquerda" type="button" placeholder="oi" >
-            <hr class="divisaoPaginacao">
-            <div name="pg1" id="" class="paginasAgendaAtual">1</div>
-            <hr class="divisaoPaginacao">
-            <div name="pg2" id="" class="paginasAgenda">2</div>
-            <hr class="divisaoPaginacao">
-            <div name="pg3" id="" class="paginasAgenda">3</div>
-            <hr class="divisaoPaginacao">
-            <div name="pg4" id="" class="paginasAgenda">4</div>
-            <hr class="divisaoPaginacao">
-            <div name="pg5" id="" class="paginasAgenda">5</div>
-            <hr class="divisaoPaginacao">
-            <input value="" title="pgDireita" name="botaoPassarPgDireita" id="" class="botaoPassarPgDireita" type="button" placeholder="d">
+        <section name="boxPaginasAgenda" id="" class="boxPaginasAgenda">
+            
+            <?php 
+                if(!empty($_GET['pagina']) || isset($_GET['pagina'])){
+
+                if ($pagina > 1) { ?>
+                <a href="<?php echo 'agendaTel_Int.php?search_pesquisa='.$pesquisa.'&search_setor='.$setor_pesquisa.'&pagina='.$pagina - 1 ?>" class="paginasAgenda">
+                <
+                </a>
+            <?php } 
+               
+            for ($i = 1; $i<=$total_paginas; $i++) { 
+                if ($pagina == $i){
+                    $estilo = "class=\"paginasAgendaAtual\"";
+                }
+                    else {
+                        $estilo = "class=\"paginasAgenda\"";
+                    }
+            ?>
+                <a href="<?php echo 'agendaTel_Int.php?search_pesquisa='.$pesquisa.'&search_setor='.$setor_pesquisa.'&pagina='. $i; ?>" name="pg" <?php echo $estilo; ?> > <?php echo $i; ?> </a>
+                <?php }
+
+                if($pagina < $total_paginas){ ?>
+                <a href="<?php echo 'agendaTel_Int.php?search_pesquisa='.$pesquisa.'&search_setor='.$setor_pesquisa.'&pagina='.$pagina + 1 ?>"  class="paginasAgenda">
+                >
+                </a>
+                <?php } } ?>
+                
     </section>
 </div>
 

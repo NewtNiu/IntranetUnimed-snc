@@ -1,8 +1,8 @@
-/*Criação do banco*/
+/CRIAÇÃO DO BANCO/
 
 CREATE DATABASE IF NOT EXISTS intranet_unimed;
 
-/*Criação das Tabelas*/
+/CRIAÇÃO DAS TABELAS/
 
 USE intranet_unimed;
 --
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS TIPO_CARGO
     PRIMARY KEY (CD_TIPO_CARGO)
 );
 
-/*Chaves Estrangeiras*/
+/CHAVES ESTRANGEIRAS/
 
 ALTER TABLE USUARIO
 ADD CONSTRAINT FK_CD_DEPARTAMENTO_USER
@@ -115,7 +115,7 @@ ADD CONSTRAINT FK_CD_TIPO_TELEFONE_EXT
 FOREIGN KEY (CD_TIPO_TELEFONE)
 REFERENCES TIPO_TELEFONE (CD_TIPO_TELEFONE);
 
-/*Povoação do Banco*/
+/POVOANDO TIPO DE CARGO, TELEFONE E DEPARTAMENTOS/
 
 INSERT INTO TIPO_CARGO (CD_TIPO_CARGO, TIPO_CARGO)
 VALUES
@@ -189,7 +189,7 @@ VALUES
 ('UTI NEONATAL'),
 ('UTI PEDIÁTRICA');
 
-/*Povoação Login*/
+/POVOAÇÃO LOGIN/
 
 INSERT INTO USUARIO (USUARIO, SENHA, NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO, CD_DEPARTAMENTO, CD_TIPO_CARGO)
 VALUES
@@ -200,7 +200,6 @@ VALUES
 
 /* POVOAÇÃO USUÁRIOS */
 
-/*JA POVOADO/EXECUTADO PRIMEIRA PARTE */
 INSERT INTO USUARIO (NOME, SOBRENOME, USUARIO, SENHA, SEXO, DATA_NASCIMENTO, CARGO, CD_DEPARTAMENTO, CD_TIPO_CARGO)
 VALUES
 ('Fernanda', 'Guimarães', 'fernandaguimaraes', '@uni@227', 'I', '1987-10-22', 'Assistente Administrativo de Suprimentos', 1, 'C'),
@@ -266,7 +265,7 @@ VALUES
 ('Braian', 'Picolo', 'braianpicolo', '@uni@227', 'I', '1987-05-15', 'Coordenador Médico', 54, 'M'),
 ('Barbara', 'Biagini', 'barbarabiagini', '@uni@227', 'F', '1996-09-08', 'Médica', 40, 'M'),
 ('Gustavo', 'Gomes Santos', 'gustavogomes', '@uni@227', 'M', '1983-02-01', 'Médico Pediatra', 55, 'M'),
-('Carolina', 'Almeida', 'carolinaalmeida', '@uni@227', 'I', '1999-10-30', 'Médica Cirirgiã', 26, 'M'),
+('Carolina', 'Almeida', 'carolinaalmeida', '@uni@227', 'I', '1999-10-30', 'Médica Cirurgiã', 26, 'M'),
 ('Rodrigo', 'Pereira', 'rodrigopereira', '@uni@227', 'M', '1985-06-20', 'Médico Obstetra', 33, 'M'),
 ('Lumélia', 'Martins', 'larissamartins', '@uni@227', 'F', '1993-03-14', 'Médica', 10, 'M'),
 ('Vilson', 'Fernandes', 'vitorfernandes', '@uni@227', 'M', '1991-08-10', 'Médico Cirurgião', 10, 'M'),
@@ -317,4 +316,223 @@ VALUES
 ('Marcela', 'Priscila Almeida', 'marcelapriscila', '@uni@227', 'F', '1999-08-25', 'Analista de Relacionamento Cooperado', 52, 'C'),
 ('Antônio', 'Fossa', 'antoniofossa', '@uni@227', 'M', '1996-10-03', 'Coordenador de Secretaria', 52, 'C'),
 ('Pedro', 'Los', 'pedrolos', '@uni@227', 'M', '1986-02-25', 'Gerente de Operações', 48, 'C'),
-('Rayan', 'Cristi', 'rayancristi', '@uni@227', 'I', '1990-07-13', 'Desenvolvedor de Software', 48, 'C');
+('Rayan', 'Cristi', 'rayancristi', '@uni@227', 'I', '1990-07-13', 'Desenvolvedor de Software', 48, 'C'),
+('Julianne', 'Cristina Almeida', 'juliannealmeida', '@uni@227', 'F', '1998-08-11', 'Enfermeira', 26, 'C'),
+('Claudir', 'Simonetto', 'claudir.simonetto', '@uni@227', 'M', '1980-05-26', 'Médico', 27, 'C'),
+('Alan', 'Borges da Silva', 'alanborges', '@uni@227', 'M', '2001-02-05', 'Enfermeiro', 27, 'C'),
+('Gustavo', 'Soares', 'gustavosoares', '@uni@227', 'M', '2001-06-26', 'Enfermeiro', 33, 'C'),
+('Carolina', 'Linhares', 'carolinalinhares', '@uni@227', 'F', '1999-04-26', 'Enfermeira', 53, 'C'),
+('Márcia', 'Cordeiro', 'marciacordeiro', '@uni@227', 'F', '1988-12-08', 'Enfermeira', 54, 'C'),
+('Elisiane', 'Pereira', 'elisanepereira', '@uni@227', 'F', '1994-06-21', 'Enfermeira', 55, 'C'),
+('Sayonara', 'Machado', 'sayonaramachado', '@uni@227', 'F', '1993-11-09', 'Enfermeira', 56, 'C');
+
+/POVOAÇÃO DOS RAMAIS INTERNOS/
+
+INSERT INTO TELEFONE_INTERNO(NUM_TELEFONE, CD_MATRICULA, CD_TIPO_TELEFONE)
+VALUES
+#ADMINISTRATIVO
+('2426', 8, 'R'),
+('2752', 9, 'R'),
+('2660', 13, 'R'),
+('2663', 60, 'R'),
+('2426', 61, 'R'),
+('2752', 62, 'R'),
+#TI
+('2661', 1, 'R'),
+('2306', 2, 'R'),
+('1883', 3, 'R'),
+('2751', 4, 'R'),
+('2258', 58, 'R'),
+('2753', 106, 'R'),
+('2754', 107, 'R'),
+#ALMOXARIFADO
+('1890', 5, 'R'),
+('2621', 6, 'R'),
+#AMBULATORIO
+('2487', 10, 'R'),
+('2489', 11, 'R'),
+#ARQUIVO
+('2394', 7, 'R'),
+('2718', 12, 'R'),
+#AUDITORIA
+('2652', 14, 'R'),
+('2650', 15, 'R'),
+#AUTORIZAÇÃO
+('1822', 16, 'R'),
+('1819', 17, 'R'),
+#CCIRAS
+('2568', 18, 'R'),
+('1894', 19, 'R'),
+#CENTRAL DE ATENDIMENTO - SAC
+('2719', 20, 'R'),
+('2257', 21, 'R'),
+#CENTRAL DE MATERIAIS
+('2422', 22, 'R'),
+('2701', 23, 'R'),
+#CENTRO CIRÚRGICO
+('2655', 24, 'R'),
+('2765', 25, 'R'),
+('2234', 70, 'R'),
+('2237', 71, 'R'),
+#COMERCIAL
+('2727', 26, 'R'),
+('2450', 27, 'R'),
+#COMPRAS
+('1831', 28, 'R'),
+('1865', 29, 'R'),
+('1866', 57, 'R'),
+#CONTROLADORIA
+('2772', 30, 'R'),
+('2695', 31, 'R'),
+#COTEP
+('2439', 32, 'R'),
+('2458', 33, 'R'),
+#ENFERMAGEM
+('2722', 34, 'R'),
+('2708', 35, 'R'),
+#EVB
+('2737', 36, 'R'),
+('2363', 37, 'R'),
+#FARMÁCIA
+('2649', 38, 'R'),
+('1867', 39, 'R'),
+#FATURAMENTO
+('2769', 40, 'R'),
+('2742', 41, 'R'),
+#FINANCEIRO
+('2491', 42, 'R'),
+('1886', 43, 'R'),
+#FISIOTERAPIA
+('2342', 44, 'R'),
+('2343', 45, 'R'),
+#GERÊNCIA
+('2661', 46, 'R'),
+('2663', 47, 'R'),
+#GESTÃO DE CONTRATOS
+('1816', 48, 'R'),
+('1802', 49, 'R'),
+#GESTÃO DE OBRAS
+('2376', 50, 'R'),
+('1895', 51, 'R'),
+#INFORMAÇÕES GERENCIAIS
+('2226', 52, 'R'),
+('2227', 53, 'R'),
+#INTERNAÇÃO
+('2432', 54, 'R'),
+('1874', 55, 'R'),
+('1876', 72, 'R'),
+#INTERNAÇÃO CIRÚRGICA
+('2230', 68, 'R'),
+('2235', 120, 'R'),
+#INTERNAÇÃO CLÍNICA
+('2300', 121, 'R'),
+('2256', 122, 'R'),
+#JURÍDICO
+('2388', 74, 'R'),
+('2397', 75, 'R'),
+#LABORATÓRIO
+('1850', 76, 'R'),
+('1851', 77, 'R'),
+#LAVANDERIA
+('2313', 78, 'R'),
+('2314', 79, 'R'),
+#MANUTENÇÃO
+('2738', 80, 'R'),
+('1898', 81, 'R'),
+#MARKENTING
+('1817', 56, 'R'),
+('2546', 59, 'R'),
+#MATERNIDADE
+('2434', 69, 'R'),
+('2421', 123, 'R'),
+#NUCLEO GESTÃO ESTRATÉGICA E ORÇAMENTO
+('2658', 82, 'R'),
+('2653', 83, 'R'),
+#NUCLEO DE GOVERNANÇA COPORATIVA
+('2474', 84, 'R'),
+('2472', 85, 'R'),
+#NUCLEO DE QUALIDADE EM SAUDE
+('1892', 86, 'R'),
+('2633', 87, 'R'),
+#NUTRIÇÃO
+('2648', 88, 'R'),
+('1877', 89, 'R'),
+#ONCOLOGIA
+('2740', 90, 'R'),
+('2358', 91, 'R'),
+#OUVIDORIA
+('2386', 92, 'R'),
+('2350', 93, 'R'),
+#PA
+('2702', 66, 'R'),
+('2739', 94, 'R'),
+('2470', 95, 'R'),
+#RELACIONAMENTO CORPORATIVO
+('2356', 96, 'R'),
+('2359', 97, 'R'),
+#RH
+('2351', 98, 'R'),
+('2218', 99, 'R'),
+#SAUDE OCUPACIONAL
+('2368', 100, 'R'),
+('2485', 101, 'R'),
+#SUSTENTABILIDADE
+('1815', 102, 'R'),
+('2297', 103, 'R'),
+#TELEFONIA
+('2622', 104, 'R'),
+('2565', 105, 'R'),
+#TRANSPORTE
+('2756', 108, 'R'),
+('2832', 109, 'R'),
+#UND INTERNAÇÃO PEDIÁTRICA SETOR B
+('2768', 73, 'R'),
+('2635', 118, 'R'),
+('2480', 119, 'R'),
+#UNIMAGEM CDI
+('2571', 110, 'R'),
+('2629', 111, 'R'),
+#UNIMED PERSONAL
+('2617', 112, 'R'),
+('2816', 113, 'R'),
+#UNIMED PERSONAL PINHALZINHO
+('2417', 114, 'R'),
+('2826', 115, 'R'),
+#UNIVOCÊ
+('2657', 116, 'R'),
+('2821', 117, 'R'),
+#UTI ADULTO 1
+('1872', 63, 'R'),
+('2551', 124, 'R'),
+#UTI ADULTO 2
+('2427', 65, 'R'),
+('2541', 125, 'R'),
+#UTI NEONATAL
+('2216', 67, 'R'),
+('2252', 126, 'R'),
+#UTI PEDIÁTRICA
+('2338', 64, 'R'),
+('1875', 127, 'R');
+
+/POVOAÇÃO DOS EXTERNOS (MÉDICOS, COLABORADORES E FORNECEDORES EXTERNOS)/
+
+INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO, CD_DEPARTAMENTO, CD_TIPO_CARGO)
+VALUES
+#COLABORADORES
+('David', 'Luis Costa', 'M', '1985-02-07', 'Auxiliar de Serviços Gerais CME', 9, 'C'),
+('Carlos', 'de Oliveira', 'M', '1995-09-26', 'Enfermeiro', 27, 'C'),
+('Ruan', 'Pereira Dutra', 'I', '1994-04-25', 'Assistente Jurídico', 28, 'C'),
+('Gabriella', 'Ceconi', 'F', '1989-11-03', 'Analista de Marketing', 32, 'C'),
+('Andressa', 'Marcondes', 'F', '1997-12-26', 'Auxiliar de Gestão de Pessoas', 42, 'C'),
+#FORNECEDORES
+('Josué', 'Machado Lima', 'M', '1980-05-28', 'Analista de Suprimentos', 1, 'F'),
+('Antônio', 'Gonçalves', 'M', '1979-12-07', 'Comprador', 12, 'F'),
+('Isabelli', 'Prates', 'F', '1997-09-15', 'Consultor(a) de Vendas de Plano de Saúde', 11, 'F'),
+('Helena', 'Canossa', 'I', '1996-09-22', 'Coordenador(a) de Controladoria', 13, 'F'),
+('Janice', 'Martins', 'F', '1986-10-28', 'Auxiliar de Contratos', 22, 'F'),
+#MÉDICOS
+('Renata', 'Regert', 'F', '1968-11-28', 'Médica', 7, 'M'),
+('Alison', 'Verrel', 'M', '1978-07-07', 'Médico', 10, 'M'),
+('Luiz', 'Felipe Salles', 'M', '1974-06-08', 'Coordenador Médico', 53, 'M'),
+('Michel', 'Henrique Silva', 'M', '1980-07-24', 'Médico Pediatra', 55, 'M'),
+('Leonardo', 'Vitorino', 'M', '1983-03-21', 'Médico Obstetra', 33, 'M');
