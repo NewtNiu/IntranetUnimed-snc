@@ -140,7 +140,20 @@
     </section>
 <!-- tabela siglario -->
     <section name="boxsiglario" id="" class="boxsiglario">
-    
+        <table class="tabelaSiglas">
+            <!-- header -->
+            <tr class="linhaHeader">
+                <th class="colunaHeaderS">SIGLAS</th>
+                <th class="colunaHeaderD">DESCRIÇÃO</th>
+                <th class="colunaHeaderU">USAR</th>
+            </tr>
+            <!-- corpo -->
+            <tr class="linhaCorpo">
+                <th class="colunaCorpoS">tdah</th>
+                <th class="colunaCorpoD">lucas</th>
+                <th class="colunaCorpoU">sim</th>
+            </tr>
+        </table>
     </section>
 <!-- paginacao -->
     <section name="boxPaginasAgenda" id="" class="boxPaginasAgenda">
