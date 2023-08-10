@@ -32,8 +32,8 @@
                 <?php
                     print "<button accesskey='s' class='btnSair'><a href='logout.php'>Sair</a></button>";
                 ?>
-            </div> 
-        </div> 
+            </div>
+        </div>
     </header>
     <div name="conteudo" id="conteudo" class="conteudo">
     <nav name="navegacao" id="" class="navegacao">
@@ -109,7 +109,7 @@
         <div class="containerDoc">
             <div class="div-estilizada" draggable="false" onclick="toggleLinks(1)">Documentos para Consulta</div>
             <div id="links1" class="links">
-            <ul class="uldocsConsulta">   
+            <ul class="uldocsConsulta">  
                 <li><a href="/intranet/index/download?arquivo=PLI.GOV.0005-02_Politica_de_Seguranca_da_Informacao_e_Privacidade_de_Dados_Pessoais.pdf" title="Política de Segurança da Informação e Privacidade de Dados Pessoais" target="_new">Política de Segurança da Informação e Privacidade de Dados Pessoais</a></li>  
                 <li><a href="/intranet/index/download?arquivo=CBHPM.pdf" title="CBHPM" target="_new">CBHPM</a></li>
                 <li><a href="/intranet/index/download?arquivo=Painel Ponto.jpg" title="Descrição de Lançamentos do Ponto no Painel" target="_new">Descrição de Lançamentos do Ponto no Painel</a></li>
@@ -285,7 +285,7 @@
         <p>|</p>
         <p name="2023copyright">2023 Copyright - Todos os direitos reservados.</p>
     </section>
-</footer> 
+</footer>
 <script src="main.js"></script>
 </body>
 </html>

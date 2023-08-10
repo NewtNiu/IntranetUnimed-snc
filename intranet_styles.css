@@ -268,7 +268,6 @@ li#nav {
 nav ul li a:hover {
     color: #00524C;
     transition: all .2s ease-in-out;
-
 }
 .pgatual {
     background-color: #00524C;
@@ -276,7 +275,6 @@ nav ul li a:hover {
 }
 .pgatual a:hover {
     color: white;
-
 }
 section nav ul hr{
     transform: rotate(90deg);
@@ -554,7 +552,7 @@ p#clock{
     font-size: large;
 }
 .infoSetorColaborador p{
-    font-size: 19px;
+    font-size: 17px;
     color: black;
 }
 footer{

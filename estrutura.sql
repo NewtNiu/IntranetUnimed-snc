@@ -1,8 +1,8 @@
-/CRIAÇÃO DO BANCO/
+/*CRIAÇÃO DO BANCO*/
 
 CREATE DATABASE IF NOT EXISTS intranet_unimed;
 
-/CRIAÇÃO DAS TABELAS/
+/*CRIAÇÃO DAS TABELAS*/
 
 USE intranet_unimed;
 --
@@ -28,10 +28,28 @@ CREATE TABLE IF NOT EXISTS EXTERNO
     SOBRENOME VARCHAR(100) NOT NULL,
     SEXO VARCHAR(5),
     DATA_NASCIMENTO DATE,
-    CARGO VARCHAR (250),
+    CARGO_ESPECIALIDADE VARCHAR (250),
     CD_DEPARTAMENTO INT,
     CD_TIPO_CARGO VARCHAR(5),
+    TELEFONE VARCHAR(50),
+    CELULAR1 VARCHAR(50),
+    CELULAR2 VARCHAR(50),
     PRIMARY KEY (CD_EXTERNO)
+);
+--
+CREATE TABLE IF NOT EXISTS ENDERECO_EXTERNO
+(
+	CD_ENDERECO_EXT INT NOT NULL AUTO_INCREMENT,
+    CD_EXTERNO INT,
+    ESTADO VARCHAR (100),
+    MUNICIPIO VARCHAR (100),
+    BAIRRO VARCHAR (100),
+    LOGRADOURO VARCHAR (50),
+    RUA VARCHAR (100),
+    NUMERO INT,
+    COMPLEMENTO VARCHAR(1),
+    CEP VARCHAR(20),
+    PRIMARY KEY (CD_ENDERECO_EXT)
 );
 --
 CREATE TABLE IF NOT EXISTS TELEFONE_INTERNO
@@ -41,15 +59,6 @@ CREATE TABLE IF NOT EXISTS TELEFONE_INTERNO
     CD_MATRICULA INT,
     CD_TIPO_TELEFONE VARCHAR(5),
     PRIMARY KEY (CD_TELEFONE_INT)
-);
---
-CREATE TABLE IF NOT EXISTS TELEFONE_EXTERNO
-(
-	CD_TELEFONE_EXT INT NOT NULL AUTO_INCREMENT,
-    NUM_TELEFONE VARCHAR(50) NOT NULL,
-    CD_EXTERNO INT,
-    CD_TIPO_TELEFONE VARCHAR(5),
-    PRIMARY KEY (CD_TELEFONE_EXT)
 );
 --
 CREATE TABLE IF NOT EXISTS TIPO_TELEFONE
@@ -72,8 +81,17 @@ CREATE TABLE IF NOT EXISTS TIPO_CARGO
     TIPO_CARGO VARCHAR(25),
     PRIMARY KEY (CD_TIPO_CARGO)
 );
+--
+CREATE TABLE IF NOT EXISTS SIGLARIO
+(
+	CD_SIGLA INT NOT NULL AUTO_INCREMENT,
+    SIGLA VARCHAR(250),
+    DESCRICAO VARCHAR(250),
+    USO VARCHAR(10),
+    PRIMARY KEY (CD_SIGLA)
+);
 
-/CHAVES ESTRANGEIRAS/
+/*CHAVES ESTRANGEIRAS*/
 
 ALTER TABLE USUARIO
 ADD CONSTRAINT FK_CD_DEPARTAMENTO_USER
@@ -95,27 +113,22 @@ ADD CONSTRAINT FK_CD_TIPO_CARGO_EXT
 FOREIGN KEY (CD_TIPO_CARGO)
 REFERENCES TIPO_CARGO (CD_TIPO_CARGO);
 --
+ALTER TABLE ENDERECO_EXTERNO
+ADD CONSTRAINT FK_CD_ENDERECO_EXT
+FOREIGN KEY (CD_EXTERNO)
+REFERENCES EXTERNO (CD_EXTERNO);
+--
 ALTER TABLE TELEFONE_INTERNO
 ADD CONSTRAINT FK_CD_MATRICULA
 FOREIGN KEY (CD_MATRICULA)
 REFERENCES USUARIO (CD_MATRICULA);
 --
-ALTER TABLE TELEFONE_EXTERNO
-ADD CONSTRAINT FK_CD_EXTERNO
-FOREIGN KEY (CD_EXTERNO)
-REFERENCES EXTERNO (CD_EXTERNO);
---
 ALTER TABLE TELEFONE_INTERNO
 ADD CONSTRAINT FK_CD_TIPO_TELEFONE_INT
 FOREIGN KEY (CD_TIPO_TELEFONE)
 REFERENCES TIPO_TELEFONE (CD_TIPO_TELEFONE);
---
-ALTER TABLE TELEFONE_EXTERNO
-ADD CONSTRAINT FK_CD_TIPO_TELEFONE_EXT
-FOREIGN KEY (CD_TIPO_TELEFONE)
-REFERENCES TIPO_TELEFONE (CD_TIPO_TELEFONE);
 
-/POVOANDO TIPO DE CARGO, TELEFONE E DEPARTAMENTOS/
+/*POVOANDO TIPO DE CARGO, TELEFONE E DEPARTAMENTOS*/
 
 INSERT INTO TIPO_CARGO (CD_TIPO_CARGO, TIPO_CARGO)
 VALUES
@@ -189,7 +202,7 @@ VALUES
 ('UTI NEONATAL'),
 ('UTI PEDIÁTRICA');
 
-/POVOAÇÃO LOGIN/
+/*POVOAÇÃO LOGIN*/
 
 INSERT INTO USUARIO (USUARIO, SENHA, NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO, CD_DEPARTAMENTO, CD_TIPO_CARGO)
 VALUES
@@ -326,7 +339,7 @@ VALUES
 ('Elisiane', 'Pereira', 'elisanepereira', '@uni@227', 'F', '1994-06-21', 'Enfermeira', 55, 'C'),
 ('Sayonara', 'Machado', 'sayonaramachado', '@uni@227', 'F', '1993-11-09', 'Enfermeira', 56, 'C');
 
-/POVOAÇÃO DOS RAMAIS INTERNOS/
+/*POVOAÇÃO DOS RAMAIS INTERNOS*/
 
 INSERT INTO TELEFONE_INTERNO(NUM_TELEFONE, CD_MATRICULA, CD_TIPO_TELEFONE)
 VALUES
@@ -514,25 +527,709 @@ VALUES
 ('2338', 64, 'R'),
 ('1875', 127, 'R');
 
-/POVOAÇÃO DOS EXTERNOS (MÉDICOS, COLABORADORES E FORNECEDORES EXTERNOS)/
+/*PRIMEIRA POVOAÇÃO DOS EXTERNOS (MÉDICOS, COLABORADORES E FORNECEDORES EXTERNOS)*/
 
-INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO, CD_DEPARTAMENTO, CD_TIPO_CARGO)
-VALUES
 #COLABORADORES
-('David', 'Luis Costa', 'M', '1985-02-07', 'Auxiliar de Serviços Gerais CME', 9, 'C'),
-('Carlos', 'de Oliveira', 'M', '1995-09-26', 'Enfermeiro', 27, 'C'),
-('Ruan', 'Pereira Dutra', 'I', '1994-04-25', 'Assistente Jurídico', 28, 'C'),
-('Gabriella', 'Ceconi', 'F', '1989-11-03', 'Analista de Marketing', 32, 'C'),
-('Andressa', 'Marcondes', 'F', '1997-12-26', 'Auxiliar de Gestão de Pessoas', 42, 'C'),
+INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO_ESPECIALIDADE, CD_DEPARTAMENTO, CD_TIPO_CARGO, TELEFONE, CELULAR1, CELULAR2)
+VALUES
+('David', 'Luis Costa', 'M', '1985-02-07', 'Auxiliar de Serviços Gerais CME', 9, 'C', '(555) 555-1001', '91234-5678', '92345-6789'),
+('Carlos', 'de Oliveira', 'M', '1995-09-26', 'Enfermeiro', 27, 'C', '(555) 555-2002', '93456-7890', '94567-8901'),
+('Ruan', 'Pereira Dutra', 'I', '1994-04-25', 'Assistente Jurídico', 28, 'C', '(555) 555-3003', '95678-9012', '96789-0123'),
+('Gabriella', 'Ceconi', 'F', '1989-11-03', 'Analista de Marketing', 32, 'C', '(555) 555-4004', '97890-1234', '98901-2345'),
+('Andressa', 'Marcondes', 'F', '1997-12-26', 'Auxiliar de Gestão de Pessoas', 42, 'C', '(555) 555-5005', '99012-3456', '90123-4567');
+--
 #FORNECEDORES
-('Josué', 'Machado Lima', 'M', '1980-05-28', 'Analista de Suprimentos', 1, 'F'),
-('Antônio', 'Gonçalves', 'M', '1979-12-07', 'Comprador', 12, 'F'),
-('Isabelli', 'Prates', 'F', '1997-09-15', 'Consultor(a) de Vendas de Plano de Saúde', 11, 'F'),
-('Helena', 'Canossa', 'I', '1996-09-22', 'Coordenador(a) de Controladoria', 13, 'F'),
-('Janice', 'Martins', 'F', '1986-10-28', 'Auxiliar de Contratos', 22, 'F'),
+INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CD_TIPO_CARGO, TELEFONE)
+VALUES
+('Josué', 'Machado Lima', 'M', '1980-05-28', 'F', '(555) 555-6006'),
+('Antônio', 'Gonçalves', 'M', '1979-12-07','F', '(555) 555-7007'),
+('Isabelli', 'Prates', 'F', '1997-09-15', 'F', '(555) 555-8008'),
+('Helena', 'Canossa', 'I', '1996-09-22', 'F', '(555) 555-9009'),
+('Janice', 'Martins', 'F', '1986-10-28', 'F', '(555) 555-1010');
+--
 #MÉDICOS
-('Renata', 'Regert', 'F', '1968-11-28', 'Médica', 7, 'M'),
-('Alison', 'Verrel', 'M', '1978-07-07', 'Médico', 10, 'M'),
-('Luiz', 'Felipe Salles', 'M', '1974-06-08', 'Coordenador Médico', 53, 'M'),
-('Michel', 'Henrique Silva', 'M', '1980-07-24', 'Médico Pediatra', 55, 'M'),
-('Leonardo', 'Vitorino', 'M', '1983-03-21', 'Médico Obstetra', 33, 'M');
+INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO_ESPECIALIDADE, CD_DEPARTAMENTO, CD_TIPO_CARGO, TELEFONE)
+VALUES
+('Renata', 'Regert', 'F', '1968-11-28', 'Médico Patologista Clinico/Medicina', 7, 'M', '(555) 555-2020'),
+('Alison', 'Verrel', 'M', '1978-07-07', 'Médico Patologista Clinico/Medicina', 10, 'M', '(555) 555-3030'),
+('Luiz', 'Felipe Salles', 'M', '1974-06-08', 'Coordenador Médico', 53, 'M', '(555) 555-4040'),
+('Michel', 'Henrique Silva', 'M', '1980-07-24', 'Médico Pediatra', 55, 'M', '(555) 555-5050'),
+('Leonardo', 'Vitorino', 'M', '1983-03-21', 'Médico Obstetra', 33, 'M', '(555) 555-6060');
+
+
+/*SEGUNDA POVOAÇÃO DOS EXTERNOS (MÉDICOS, COLABORADORES E FORNECEDORES EXTERNOS)*/
+
+#COLABORADORES
+INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO_ESPECIALIDADE, CD_DEPARTAMENTO, CD_TIPO_CARGO, TELEFONE, CELULAR1, CELULAR2)
+VALUES
+('Ana', 'Souza', 'F', '1985-08-25', 'Analista de Suprimentos', 1, 'C', '(555) 4567-8901', '95678-9012', '91234-5678'),
+('Pedro', 'Oliveira', 'M', '1992-03-10', 'Analista Administrativo de Arquivo', 4, 'C', '(555) 7890-1234', '95678-9012', '92345-6789'),
+('Mariana', 'Ribeiro', 'F', '1988-11-05', 'Auxiliar Administrativo', 2, 'C', '(555) 2345-6789', '92345-6789', '91234-5678'),
+('Carlos', 'Ferreira', 'M', '1977-07-20', 'Analista de Autorizações', 6, 'C', '(555) 8901-2345', '91234-5678', '92345-6789'),
+('Isabela', 'Santos', 'F', '1999-02-12', 'Enfermeira', 7, 'C', '(555) 6789-0123', '92345-6789', '95678-9012'),
+('Felipe', 'Almeida', 'M', '1983-12-30', 'Técnico de Enfermagem CME', 9, 'C', '(555) 3456-7890', '95678-9012', '91234-5678'),
+('Letícia', 'Lima', 'F', '1972-09-17', 'Coordenador de Mercado e Relacionamento', 11, 'C', '(555) 9012-3456', '91234-5678', '92345-6789'),
+('Rafael', 'Gomes', 'M', '1986-06-22', 'Comprador', 12, 'C', '(555) 5678-9012', '95678-9012', '91234-5678'),
+('Sofia', 'Castro', 'F', '1997-04-07', 'Psicóloga', 16, 'C', '(555) 7890-1234', '92345-6789', '95678-9012'),
+('Henrique', 'Barbosa', 'M', '1979-10-03', 'Auxiliar de Atendimento', 18, 'C', '(555) 2345-6789', '91234-5678', '92345-6789');
+--
+#FORNECEDORES
+INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CD_TIPO_CARGO, TELEFONE)
+VALUES
+('Laura', 'Pereira', 'F', '1990-08-19', 'F', '(555) 8901-2345'),
+('Guilherme', 'Fernandes', 'M', '1981-05-13', 'F', '(555) 6789-0123'),
+('Camila', 'Martins', 'F', '1975-01-28', 'F', '(555) 3456-7890'),
+('Marcelo', 'Rocha', 'M', '1993-11-09', 'F', '(555) 9012-3456'),
+('Amanda', 'Cardoso', 'F', '1989-07-24', 'F', '(555) 5678-9012'),
+('Vitor', 'Carvalho', 'M', '1978-04-11', 'F', '(555) 7890-1234'),
+('Julia', 'Ferreira', 'F', '1991-09-02', 'F', '(555) 2345-6789'),
+('Gabriel', 'Sousa', 'M', '1982-06-14', 'F', '(555) 8901-2345'),
+('Raquel', 'Gonçalves', 'F', '1998-02-05', 'F', '(555) 6789-0123'),
+('Marcos', 'Alves', 'M', '1984-12-31', 'F', '(555) 3456-7890');
+--
+#MÉDICOS
+INSERT INTO EXTERNO (NOME, SOBRENOME, SEXO, DATA_NASCIMENTO, CARGO_ESPECIALIDADE, CD_DEPARTAMENTO, CD_TIPO_CARGO, TELEFONE)
+VALUES
+('Bruna', 'Oliveira', 'F', '1973-09-16', 'Coordenador Médico', 53, 'M', '(555) 9012-3456'),
+('Leonardo', 'Ribeiro', 'M', '1987-06-21', 'Médico Obstetra', 33, 'M', '(555) 5678-9012'),
+('Larissa', 'Santos', 'F', '1996-04-08', 'Médica Pediatra', 56, 'M', '(555) 7890-1234'),
+('Gustavo', 'Silva', 'M', '1980-10-02', 'Médico Cirurgião', 53, 'M', '(555) 2345-6789'),
+('Thais', 'Ferreira', 'F', '1989-08-18', 'Médico Radiologista', 49, 'M', '(555) 8901-2345'),
+('Diego', 'Almeida', 'M', '1982-05-12', 'Médico Patologista Clinico/Medicina', 7, 'M', '(555) 6789-0123'),
+('Carolina', 'Lima', 'F', '1974-01-27', 'Médico Patologista Clinico/Medicina', 7, 'M', '(555) 3456-7890'),
+('Eduardo', 'Gomes', 'M', '1994-11-10', 'Médico Patologista Clinico/Medicina', 10, 'M', '(555) 9012-3456'),
+('Fernanda', 'Castro', 'F', '1989-07-23', 'Médico Patologista Clinico/Medicina', 10, 'M', '(555) 5678-9012'),
+('Alex', 'Barbosa', 'M', '1983-04-10', 'Médico Pediatra', 55, 'M', '(555) 7890-1234');
+
+/*PRIMEIRA POVOAÇÃO DOS ENDEREÇOS EXTERNOS*/
+
+INSERT INTO ENDERECO_EXTERNO (CD_EXTERNO, ESTADO, MUNICIPIO, BAIRRO)
+VALUES
+('6', 'Santa Catarina', 'Coronel Freitas', 'Vila Lourdes'),
+('7', 'São Paulo', 'Jundiaí', 'Vila Alvorada'),
+('8', 'Rio Grande do Sul', 'Porto Alegre', 'Ilha do Pavão' ),
+('9', 'Santa Catarina', 'Nova Erechim', 'Morada do Sol'),
+('10', 'Santa Catarina', 'Criciúma', 'Santa Luzia');
+
+/*SEGUNDA POVOAÇÃO DOS ENDEREÇOS EXTERNOS*/
+
+INSERT INTO ENDERECO_EXTERNO (CD_EXTERNO, ESTADO, MUNICIPIO, BAIRRO)
+VALUES
+('26', 'São Paulo', 'São Paulo', 'Centro'),
+('27', 'Rio de Janeiro', 'Rio de Janeiro', 'Copacabana'),
+('28', 'Minas Gerais', 'Belo Horizonte', 'Savassi'),
+('29', 'Bahia', 'Salvador', 'Barra'),
+('30', 'Amazonas', 'Manaus', 'Parque 10'),
+('31', 'Pernambuco', 'Recife', 'Boa Viagem'),
+('32', 'Paraná', 'Curitiba', 'Batel'),
+('33', 'Goiás', 'Goiânia', 'Setor Bueno'),
+('34', 'Ceará', 'Fortaleza', 'Meireles'),
+('35', 'Rio Grande do Sul', 'Porto Alegre', 'Moinhos de Vento');
+
+/*POVOAÇÃO DO SIGLÁRIO*/
+
+INSERT INTO SIGLARIO (SIGLA, DESCRICAO, USO)
+VALUES
+('+', 'Presente', 'SIM'),
+('-', 'Ausente', 'SIM'),
+('1 d', '1 por dia, 1 vez ao dia', 'NÃO'),
+('3TC', 'Lamivudina', 'SIM'),
+('<', 'Menor que', 'NÃO'),
+('>', 'Maior que', 'NÃO'),
+('A/C', 'Ventilação Assistida Controlada', 'SIM'),
+('AAS', 'Ácido Acetilsalicílico (Aspirina®)', 'SIM'),
+('AB', 'Aborto', 'NÃO'),
+('ABT', 'Abocath', 'SIM'),
+('AC', 'Ausculta Cardíaca', 'SIM'),
+('ACM', 'A Critério Médico', 'SIM'),
+('ACT', 'Angioplastia', 'SIM'),
+('ACTH', 'Hormônio Adrenocorticotrófico', 'SIM'),
+('ACTP', 'Angioplastia Coronária Transluminar Percutânea', 'SIM'),
+('AD', 'Átrio Direito', 'SIM'),
+('ADH', 'Hormônio Anti - Diurético', 'SIM'),
+('ADM', 'Amplitude de movimento', 'SIM'),
+('AE', 'Átrio Esquerdo', 'SIM'),
+('AIG', 'Adequada para Idade Gestacional', 'SIM'),
+('AINE', 'Anti-Inflamatório Não-Esteroide', 'SIM'),
+('AIRV', 'Alterações inespecíficas da repolarização ventricular', 'SIM'),
+('AIT', 'Ataque Isquêmico Transitório', 'SIM'),
+('AME', 'Aleitamento materno exclusivo', 'SIM'),
+('AMIU', 'Aspiração manual intrauterina', 'SIM'),
+('Amp', 'Ampola', 'SIM'),
+('AngioTC', 'Angiotomografia computadorizada', 'SIM'),
+('ANVISA', 'Agência Nacional de Vigilância Sanitária', 'SIM'),
+('AO', 'Ambos os olhos', 'NÃO'),
+('AP', 'Ausculta Pulmonar', 'SIM'),
+('APLV', 'Alergia à Proteína do Leite de Vaca', 'SIM'),
+('ASA', 'American Society of Anesthesiologists', 'SIM'),
+('ATB', 'Antibiótico', 'SIM'),
+('ATL', 'Audiometria Vocal', 'SIM'),
+('AU', 'Altura Uterina', 'SIM'),
+('AVC/AVE', 'Acidente Vascular Cerebral/Encefálico', 'SIM'),
+('AVCH/AVEH', 'Acidente Vascular Cerebral/Encefálico Hemorrágico', 'SIM'),
+('AVCI/AVEI', 'Acidente Vascular Cerebral/Encefálico Isquêmico', 'SIM'),
+('AVD', 'Atividade de vida diária', 'SIM'),
+('AVP', 'Acesso Venoso Periférico', 'SIM'),
+('AZT', 'Zidovudina', 'NÃO'),
+('B1', 'Tiamina', 'SIM'),
+('B12', 'Cianocobalamina', 'SIM'),
+('B2', 'Riboflavina', 'SIM'),
+('B3', 'Niacina', 'SIM'),
+('B6', 'Piridoxina', 'SIM'),
+('BAAR', 'Bacilo Álcool-Ácido Resistente', 'SIM'),
+('BNF', 'Bulhas Arrítmicas Normofonéticas', 'SIM'),
+('BAV', 'Bloqueio Atrioventricular', 'SIM'),
+('BAVT', 'Bloqueio Atrioventricular Total', 'SIM'),
+('BCF', 'Batimento Cárdio-Fetal', 'SIM'),
+('BCG', 'Vacina Contra Tuberculose', 'SIM'),
+('BCP', 'Broncopneumonia', 'SIM'),
+('BE', 'Excesso de Base', 'SIM'),
+('BEG', 'Bom Estado Geral', 'SIM'),
+('BGN', 'Bacilo Gram Negativo', 'SIM'),
+('BHB', 'Balanço Hídrico', 'SIM'),
+('BIC', 'Bicarbonato de sódio', 'NÃO'),
+('BIPAP', 'Bi Level Positive Pressure Airway', 'SIM'),
+('BIS', 'Bispectral Index', 'SIM'),
+('BK', 'Bacilo de Koch (causador da tuberculose)', 'SIM'),
+('BLO', 'Bloqueio nervo periférico', 'NÃO'),
+('BN', 'Balanço Nitrogenado', 'SIM'),
+('BO', 'Bochecho', 'NÃO'),
+('bpm', 'Batimentos Por Minuto', 'SIM'),
+('BQL', 'Bronquiolite', 'SIM'),
+('BR', 'Bolsa rota', 'SIM'),
+('BRD', 'Bloqueio de ramo direito', 'SIM'),
+('BRNF', 'Bulhas Rítmicas Normo Fonéticas', 'SIM'),
+('BRNF 2 T', 'Bulhas Rítmicas Normo Fonéticas em Dois Tempos', 'SIM'),
+('BTF', 'Bilirrubina T + F', 'SIM'),
+('Bx', 'Biópsia', 'SIM'),
+('c/', 'Com', 'SIM'),
+('Ca', 'Cálcio', 'SIM'),
+('CA', 'Câncer', 'SIM'),
+('CAD', 'Cetoacidose Diabética', 'SIM'),
+('Cai', 'Cálcio Iônico', 'SIM'),
+('CAL', 'Caloria', 'SIM'),
+('CAP', 'Cateter Artéria Pulmonar', 'SIM'),
+('CAPD', 'Diálise Peritoneal Ambulatorial Contínua', 'SIM'),
+('CAPS', 'Cápsula', 'SIM'),
+('CATE', 'Cateterismo Cardíaco', 'SIM'),
+('CAU', 'Cateter arterial umbilical', 'SIM'),
+('CB', 'Circunferência do braço', 'SIM'),
+('CBA', 'Atividade básica de Colistina', 'SIM'),
+('CC', 'Centímetros cúbicos', 'NÃO'),
+('CC', 'Centro Cirúrgico', 'SIM'),
+('CCIH', 'Comissão de Controle de Infecção Hospitalar', 'SIM'),
+('CDC', 'Center Disease', 'SIM'),
+('CDin', 'Complacência Dinâmica', 'SIM'),
+('CEC', 'Circulação Extracorpórea', 'SIM'),
+('CEN', 'Cateter Endonasal', 'SIM'),
+('CEst', 'Complacência Estática', 'SIM'),
+('CH', 'Concentrado Hemácias', 'SIM'),
+('CIA', 'Comunicação Intra-Arterial', 'SIM'),
+('CID', 'Código Internacional de Doenças', 'SIM'),
+('CIVD', 'Coagulação Intravascular Disseminada', 'SIM'),
+('CKM', 'Creatinofosfoquinase massa', 'SIM'),
+('Cl', 'Cloro', 'SIM'),
+('cm', 'Centímetros', 'SIM'),
+('cm3', 'Centímetros cúbicos', 'SIM'),
+('CMC', 'Colistimetato de Sódio', 'SIM'),
+('CMV', 'Citomegalovírus', 'SIM'),
+('CNAC', 'Cateter Nasal de Alto Fluxo', 'SIM'),
+('CO', 'Centro obstétrico', 'SIM'),
+('CO2', 'Gás Carbônico', 'SIM'),
+('COMP', 'Comprimido', 'SIM'),
+('COT', 'Coto umbilical', 'NÃO'),
+('CPC', 'Circunferência da Panturrilha', 'NÃO'),
+('Cp ou cps', 'Cápsula ou comprimido', 'NÃO'),
+('CPAP', 'Continuous Pressure Airway Positive-Pressão Contínua Positiva das Vias Aéreas', 'SIM'),
+('CPK', 'Creatinofosfoquinase', 'SIM'),
+('CPM', 'Conforme prescrição médica', 'NÃO'),
+('CPRE', 'Colangiopancreatografia retrógrada endoscópica', 'SIM'),
+('CPT', 'Capacidade Pulmonar Total', 'SIM'),
+('Cr', 'Creatinina', 'SIM'),
+('CRF', 'Capacidade residual funcional', 'SIM'),
+('CTC', 'Corticoíde', 'NÃO'),
+('CUC', 'Cicatriz umbilical', 'NÃO'),
+('CU', 'Contração Uterina', 'SIM'),
+('CVC', 'Capacidade Vital', 'SIM'),
+('CVC', 'Cateter Venoso Central', 'SIM'),
+('CVF', 'Capacidade Vital Forçada', 'SIM'),
+('CVU', 'Cateter venoso umbilical', 'SIM'),
+('Cx', 'Circunflexa', 'SIM'),
+('D', 'Dia', 'NÃO'),
+('D', 'Direito', 'SIM'),
+('DAD', 'Descendente Anterior', 'SIM'),
+('DAC', 'Doença Arterial Coronariana', 'SIM'),
+('DAI', 'Dermatite Associada a Incontinência', 'SIM'),
+('DBP', 'Displasia broncopulmonar', 'SIM'),
+('DC', 'Débito Cardíaco', 'SIM'),
+('DDAVP', 'Acetato de Desmopressina', 'SIM'),
+('DEA', 'Desfibrilador Elétrico Automático', 'SIM'),
+('Dg', 'Diagonal', 'SIM'),
+('DHEG', 'Doença Hipertensiva Específica da Gestação', 'SIM'),
+('DHL', 'Desidrogenase Láctica', 'SIM'),
+('DIP', 'Doença Inflamatória Pélvica', 'SIM'),
+('DIU', 'Dispositivo Intrauterino', 'SIM'),
+('dl', 'Decilitro', 'SIM'),
+('DM', 'Diabetes Melitus', 'SIM'),
+('DMG', 'Diabetes gestacional', 'SIM'),
+('DMOS', 'Disfunção de Múltiplos Órgãos e Sistemas', 'SIM'),
+('DNA', 'Ácido Desoxirribonucleico', 'SIM'),
+('DP', 'Derrame Pleural', 'SIM'),
+('DPOC', 'Doença Pulmonar Obstrutiva Crônica', 'SIM'),
+('DPP', 'Deslocamento Prematuro de Placenta', 'SIM'),
+('DPP', 'Data provável do parto', 'SIM'),
+('DPP', 'Deslocamento Prematuro de Placenta', 'NÃO'),
+('DPT', 'Difteria – Coqueluche – Tétano', 'SIM'),
+('DR', 'Doutor', 'SIM'),
+('DRA', 'Doutora', 'SIM'),
+('DRGE', 'Doença do Refluxo Gastroesofágico', 'SIM'),
+('Drica AACR', 'Dieta rica em aminoácidos de cadeia ramificada', 'SIM'),
+('DSM', 'Manual Diagnóstico e Estatístico de Transtornos Mentais', 'SIM'),
+('DST', 'Doenças Sexualmente Transmissíveis', 'SIM'),
+('DTG', 'Dolutegravir', 'SIM'),
+('DUD', 'Dinâmica Uterina', 'SIM'),
+('DUM', 'Data da Última Menstruação', 'SIM'),
+('DVE', 'Derivação Ventricular Externa', 'SIM'),
+('DVP', 'Derivação Ventrículo Peritoneal', 'SIM'),
+('E', 'Esquerdo', 'SIM'),
+('E.coli', 'Escherichia Coli', 'SIM'),
+('EAP', 'Edema Agudo de Pulmão', 'SIM'),
+('ECG', 'Eletrocardiograma', 'SIM'),
+('ECMO', 'Oxigenação Extracorpórea', 'SIM'),
+('EDA', 'Endoscopia Digestiva Alta', 'SIM'),
+('EEG', 'Eletroencefalograma', 'SIM'),
+('ELA', 'Esclerose Lateral Amiotrófica', 'SIM'),
+('EMTN', 'Equipe Multiprofissional de Terapia Nutricional', 'SIM'),
+('ENF', 'Enfermeira', 'SIM'),
+('ENT', 'Enteral', 'SIM'),
+('EOAPD', 'Emissões Otoacústicas Evocadas por Produtos de Distorção', 'SIM'),
+('EOAT', 'Emissões Otoacústicas Transientes', 'SIM'),
+('EP', 'Expansão Pulmonar', 'SIM'),
+('EPAP', 'Expiratory Pressure = Pressão Positiva Expiratória', 'SIM'),
+('EPI', 'Via Epidural', 'SIM'),
+('ESBL', 'Bactérias Produtoras de Beta-lactomase', 'SIM'),
+('ESP', 'Via Espinhal', 'SIM'),
+('EtCO2', 'CO2 Expirado Final', 'SIM'),
+('EV', 'Endovenosa', 'SIM'),
+('EVVO', 'EV/VO', 'NÃO'),
+('FA', 'Fibrilação Atrial', 'SIM'),
+('FAV', 'Fístula Artério Venosa', 'SIM'),
+('FC', 'Frequência Cardíaca', 'SIM'),
+('FDA', 'Food and Drug Administration', 'SIM'),
+('Fe', 'Ferro', 'SIM'),
+('FEES', 'Nasofibroscopia Funcional da Deglutição', 'SIM'),
+('FiO2', 'Fração Inspirada de Oxigênio', 'SIM'),
+('Fisio', 'Fisioterapia', 'SIM'),
+('FLACC', 'Escala de dor utilizada no paciente pediátrico', 'SIM'),
+('FR', 'Frequência Respiratória', 'SIM'),
+('FR-AMP', 'Frasco-ampola', 'SIM'),
+('FSH', 'Hormônio Folículo Estimulante', 'SIM'),
+('FV', 'Fibrilação Ventricular', 'SIM'),
+('g', 'Grama', 'SIM'),
+('G', 'Gestação', 'SIM'),
+('Gama-GT', 'Gama glutamil transferase', 'SIM'),
+('GAST', 'Gastrostomia', 'SIM'),
+('GEN', 'Genérico', 'SIM'),
+('GI', 'Gastrointestinal', 'SIM'),
+('GIG', 'Grande para Idade Gestacional', 'SIM'),
+('Gt', 'Gota(s)', 'SIM'),
+('H', 'Hora', 'SIM'),
+('HAS', 'Hipertensão Arterial Sistêmica', 'SIM'),
+('Hb', 'Hemoglobina', 'SIM'),
+('HB', 'Higiene Brônquica', 'SIM'),
+('HbsAg', 'Antígeno de Superfície para Hepatite', 'SIM'),
+('HCl', 'Ácido clorídrico ou Cloridrato', 'NÃO'),
+('HCM', 'Hemoglobina Corpuscular Média', 'SIM'),
+('HCO3', 'Bicarbonato', 'SIM'),
+('HCT', 'Hidrocortisona', 'NÃO'),
+('HCTZ', 'Hidroclorotiazida', 'NÃO'),
+('HCV', 'Hepatite por Vírus C', 'SIM'),
+('HD', 'Hipótese Diagnóstica', 'SIM'),
+('HDA', 'Hemorragia Digestiva Alta', 'SIM'),
+('HDB', 'Hemorragia Digestiva Baixa', 'SIM'),
+('HIC', 'Hipertensão Intracraniana', 'NÃO'),
+('HIV', 'Vírus da Imunodeficiência Humana', 'SIM'),
+('HMC', 'Hemocultura', 'SIM'),
+('HMG', 'Hemograma', 'SIM'),
+('HP', 'Hipertensão pulmonar', 'SIM'),
+('HPDM', 'Hipodermóclise', 'SIM'),
+('HPP', 'Hemorragia pós-parto', 'SIM'),
+('HRS', 'Horas', 'SIM'),
+('HSA', 'Hemorragia Sub Aracnóide', 'SIM'),
+('HSD', 'Hemorragia Sub Dural', 'SIM'),
+('Ht', 'Hematócrito', 'SIM'),
+('I/E', 'Relação Inspiratório/Expiratória', 'SIM'),
+('IAM', 'Infarto Agudo do Miocárdio', 'SIM'),
+('IART', 'Intra arterial', 'NÃO'),
+('IAT', 'Intra articular', 'NÃO'),
+('IC', 'Índice Cardíaco', 'SIM'),
+('IC', 'Incisão cirúrgica', 'NÃO'),
+('ICC', 'Insuficiência Cardíaca Congestiva', 'SIM'),
+('ICN', 'Intra coronário', 'NÃO'),
+('ID', 'Intradérmica', 'SIM'),
+('IECA', 'Inibidor Enzima Conversora de Angiotensina', 'SIM'),
+('IFR', 'Isofotorreagente', 'SIM'),
+('IG', 'Idade Gestacional', 'SIM'),
+('IgA', 'Imunoglobulina A', 'SIM'),
+('IGc', 'Idade Gestacional Corrigida', 'SIM'),
+('IgE', 'Imunoglobulina E', 'SIM'),
+('IgG', 'Imunoglobulina G', 'SIM'),
+('IgM', 'Imunoglobulina M', 'SIM'),
+('IJ', 'Injeção', 'NÃO'),
+('ILA', 'Índice Líquido Amniótico', 'SIM'),
+('IM', 'Intramuscular', 'SIM'),
+('IMC', 'Índice de Massa Corpórea', 'SIM'),
+('INAL', 'Inalatório', 'SIM'),
+('INSP', 'Inspiração', 'SIM'),
+('IOC', 'Intra ocular', 'SIM'),
+('IOSS', 'Intra óssea', 'SIM'),
+('IOT', 'Intubação Orotraqueal', 'SIM'),
+('IPL', 'Via Intrapleural', 'SIM'),
+('IPRF', 'Índice Percentual de Reconhecimento de Fala', 'SIM'),
+('IRA', 'Insuficiência Renal Aguda', 'SIM'),
+('IRAS', 'Infecção Relacionada a Assistência em Saúde', 'SIM'),
+('IRC', 'Insuficiência Renal Crônica', 'SIM'),
+('IRpA', 'Insuficiência Respiratória Aguda', 'SIM'),
+('IRUVI', 'Irrigação Urinária', 'SIM'),
+('IRV', 'Irrigação Vesical', 'SIM'),
+('IRVP', 'Índice de Resistência Vascular Periférica', 'SIM'),
+('IRVS', 'Índice de Resistência Vascular Sistêmica', 'SIM'),
+('IS', 'Índice Sistólico', 'SIM'),
+('ITEC', 'Intra tecal', 'SIM'),
+('ITU', 'Infecção do Trato Urinário', 'SIM'),
+('IV Vanc', 'Vancomicina intravenosa', 'NÃO'),
+('IVAS', 'Infecção das Vias Aéreas Superiores', 'SIM'),
+('IVS', 'Via intra vascular', 'NÃO'),
+('IVT', 'Intra Vítrea', 'SIM'),
+('JEJU', 'Via Jejunostomia', 'SIM'),
+('JID', 'Jugular interna direita', 'SIM'),
+('JIE', 'Jugular interna esquerda', 'SIM'),
+('K', 'Potássio', 'SIM'),
+('KCl', 'Cloreto de potássio', 'SIM'),
+('Kg', 'Quilogramas(s)', 'SIM'),
+('L', 'Litro', 'SIM'),
+('LBA', 'Lavado Broncoalveolar', 'SIM'),
+('LCR', 'Líquido Cefálo – Raquidiano', 'SIM'),
+('LER', 'Lesão por Esforços Repetitivos', 'SIM'),
+('LH', 'Linfoma Hodgkin', 'SIM'),
+('LIB. PRO.', 'Liberação Prolongada', 'SIM'),
+('LIG', 'Ligamento', 'SIM'),
+('LIOF', 'Liofilizado', 'SIM'),
+('LLA', 'Leucemia Linfóide Aguda', 'SIM'),
+('LLC', 'Leucemia Linfóide Crônica', 'SIM'),
+('LM', 'Leite materno', 'SIM'),
+('LMA', 'Leucemia Mielóide Aguda', 'SIM'),
+('LMC', 'Leucemia Mielóide Crônica', 'SIM'),
+('LNH', 'Linfoma Não-Hodgkin', 'SIM'),
+('LRF', 'Liminar de Reconhecimento de fala', 'SIM'),
+('M', 'Motora', 'SIM'),
+('m2', 'Metros(s) quadrados(s)', 'SIM'),
+('MA', 'Médico assistente', 'SIM'),
+('MAP', 'Cardiotocografia', 'SIM'),
+('MBP', 'Muito Baixo Peso', 'SIM'),
+('mcg', 'Microgramas(s)', 'SIM'),
+('ME', 'Morte Encefálica', 'SIM'),
+('MEG', 'Mal Estado Geral', 'SIM'),
+('MEOW', 'Escala de Deterioração Gestante', 'SIM'),
+('mEq', 'Miliequivalente(s)', 'SIM'),
+('MEWS', 'Escala de Deterioração Adulto', 'SIM'),
+('MF', 'Movimentação fetal', 'SIM'),
+('mg', 'Miligrama(s)', 'SIM'),
+('Mg', 'Magnésio', 'SIM'),
+('MgSO4', 'Sulfato de magnésio', 'SIM'),
+('MID', 'Membro Inferior Direito', 'SIM'),
+('MIE', 'Membro Inferior Esquerdo', 'SIM'),
+('min', 'Minuto(s)', 'SIM'),
+('ml ou mL', 'Mililitro', 'SIM'),
+('mm', 'Milímetro', 'SIM'),
+('MMBP', 'Muito Muito Baixo Peso', 'SIM'),
+('mmHg', 'Milímetros de Mercúrio', 'SIM'),
+('MMII', 'Membros Inferiores', 'SIM'),
+('mMol', 'Milimol(es)', 'SIM'),
+('MMR', 'Vacina Combinada Contra Sarampo, Caxumba e Rubéola', 'SIM'),
+('MMSS', 'Membros Superiores', 'SIM'),
+('MSD', 'Membro Superior Direito', 'SIM'),
+('MSE', 'Membro Superior Esquerdo', 'SIM'),
+('MTN', 'Manhã, tarde, noite', 'SIM'),
+('MTX', 'Metotrexato', 'SIM'),
+('MUC', 'Medicamento de Uso Contínuo', 'SIM'),
+('Multi-R', 'Multirresistente', 'SIM'),
+('Multi-S', 'Multissensível', 'SIM'),
+('MV', 'Murmúrio Vesicular', 'SIM'),
+('MV sem RA', 'Murmúrio Vesicular sem Ruído Adventício', 'SIM'),
+('Na', 'Sódio', 'SIM'),
+('NaCl', 'Cloreto de Sódio', 'SIM'),
+('NBZ', 'Nebulização', 'SIM'),
+('NEO', 'Neoplasia', 'SIM'),
+('Neo', 'Neoplasia', 'SIM'),
+('NEWS', 'Escala de Deterioração Neonatal', 'SIM'),
+('NIPS', 'Neonatal Infant Pain Scale', 'SIM'),
+('NO', 'Óxido Nítrico', 'SIM'),
+('NPH', 'Insulina Isofana – bovina, suína ou humana', 'SIM'),
+('NPO', 'Nada por Via Oral', 'SIM'),
+('NPT', 'Nutrição Parenteral Total', 'SIM'),
+('NSF', 'Via Nasofaringe', 'SIM'),
+('n°', 'Número', 'SIM'),
+('O2', 'Oxigênio', 'SIM'),
+('OBS', 'Observação', 'SIM'),
+('OD', 'Olho direito', 'NÃO'),
+('OE', 'Olho esquerdo', 'NÃO'),
+('OFT', 'Oftálmico (a)', 'SIM'),
+('OK', 'De acordo', 'SIM'),
+('OMS', 'Organização Mundial da Saúde', 'SIM'),
+('ORL', 'Otorrinolaringologista', 'SIM'),
+('OTD', 'Otológica direita', 'NÃO'),
+('OTE', 'Otológica esquerda', 'NÃO'),
+('OTN', 'Otoneurológico', 'SIM'),
+('OTO', 'Otológico', 'SIM'),
+('PAE', 'Pressão de Átrio Esquerdo', 'SIM'),
+('PAM', 'Pressão Arterial Média', 'SIM'),
+('PAP', 'Pressão de Artéria Pulmonar', 'SIM'),
+('PAS', 'Pressão Arterial Sistólica', 'SIM'),
+('PAT', 'Pronto Atendimento', 'SIM'),
+('PAV', 'Pneumonia Associada à Ventilação', 'SIM'),
+('PBE', 'Peritonite Bacteriano Espontânea', 'SIM'),
+('Pco2', 'Pressão Parcial de CO2 no Sangue', 'SIM'),
+('PCP', 'Pressão Capilar Pulmonar', 'SIM'),
+('PEATE', 'Potencial Evocado Auditivo de Tronco Encefálico', 'SIM'),
+('PED', 'Pediátrico', 'SIM'),
+('PEEP', 'Pressão Positiva Expiratória Final', 'SIM'),
+('PEG', 'Péssimo estado geral', 'SIM'),
+('PET', 'Tomografia com Emissão Pósitrons', 'SIM'),
+('PEWS', 'Escala de Deterioração Pediátrica', 'SIM'),
+('Ph', 'Potencial de Hidrogênio Iônico', 'SIM'),
+('PIC', 'Pressão Intracraniana', 'SIM'),
+('PICC', 'Cateter Central de Inserção Periférica', 'SIM'),
+('PIG', 'Pequeno para Idade Gestacional', 'SIM'),
+('Pins', 'Pressão Inspiratória', 'SIM'),
+('PInsp', 'Pressão Inspiratória', 'SIM'),
+('Plaq', 'Plaquetas', 'SIM'),
+('Plást.', 'Plástica (de ampola plástica)', 'SIM'),
+('PMQ', 'Programa de Melhoria da Qualidade', 'SIM'),
+('PMV', 'Para Manter Veia', 'SIM'),
+('PNI', 'Pressão Não Invasivo', 'SIM'),
+('POP', 'Pós-Operatório', 'SIM'),
+('Po2', 'Pressão de Oxigênio', 'SIM'),
+('PP', 'Placenta Prévia', 'SIM'),
+('PPC', 'Pressão de Perfuração Cerebral', 'SIM'),
+('PSA', 'Antígeno Prostático Específico', 'SIM'),
+('PSAP', 'Pressão Sistólica Artéria Pulmonar', 'SIM'),
+('PT', 'Perímetro Torácico', 'SIM'),
+('PTH', 'Paratormônio', 'SIM'),
+('PTI', 'Púrpura Trombocitopênica Idiopática', 'SIM'),
+('PTT', 'Púrpura Trombocitopênica', 'SIM'),
+('PV', 'Perdas vaginais', 'NÃO'),
+('PVC', 'Pressão Venosa Central', 'SIM'),
+('Q.S.P', 'Quantidade Suficiente Para', 'SIM'),
+('QI', 'Quociente de Inteligência', 'SIM'),
+('QT', 'Quimioterapia', 'SIM'),
+('R', 'Respiratória', 'SIM'),
+('RCR', 'Ressuscitação Cardiopulmonar', 'SIM'),
+('RDT', 'Radioterapia', 'SIM'),
+('RDW', 'Índice de Anisocitose', 'SIM'),
+('RGE', 'Refluxo Gastroesofágico', 'SIM'),
+('Rh', 'Fator Rhesus (Fator Rh)', 'SIM'),
+('RHA', 'Ruídos Hidroaéreos', 'SIM'),
+('RHZE', 'Rifampicina+Isoniazida+Pirazinamida+Etambutol', 'SIM'),
+('RL', 'Ringer Lactato', 'SIM'),
+('RN', 'Recém-Nascido', 'SIM'),
+('RNM', 'Ressonância Magnética / Ressonância Nuclear Magnética', 'SIM'),
+('rpm', 'Respirações Por Minuto', 'SIM'),
+('RTA', 'Reequilíbrio Toraco Abdominal', 'SIM'),
+('RVP', 'Resistência Vascular Periférica / Resistência Vascular Pulmonar', 'SIM'),
+('RVS', 'Resistência Vascular Sistêmica', 'SIM'),
+('RX', 'Raio X', 'SIM'),
+('S/', 'Sem', 'SIM'),
+('S/N ou SN', 'Se necessário', 'SIM'),
+('SAE', 'Sistematização da Assistência de Enfermagem', 'SIM'),
+('SARA', 'Síndrome da Angústia Respiratória do Adulto', 'SIM'),
+('SC', 'Subcutâneo', 'SIM'),
+('SCD', 'Subclávia Direita', 'SIM'),
+('SCE', 'Subclávia Esquerda', 'SIM'),
+('SCIRAS', 'Serviço de Controle de Infecções Relacionadas a Assistência em Saúde', 'SIM'),
+('SDRNN', 'Síndrome do Desconforto Respiratório do Recém-Nascido', 'SIM'),
+('seg', 'Segundos', 'SIM'),
+('SF', 'Solução Fisiológica / Soro Fisiológico', 'SIM'),
+('SG', 'Solução Glicosada / Soro Glicosado', 'SIM'),
+('SGF', 'Soro Glicofisiológico', 'SIM'),
+('SIC', 'Segundo Informações Coletadas', 'SIM'),
+('SIDA', 'Síndrome da Imunodeficiência Adquirida Humana', 'SIM'),
+('SIMV', 'Ventilação Mandatória Intermitente Sincronizada', 'SIM'),
+('SIRS', 'Síndrome de Resposta Inflamatória Sistêmica', 'SIM'),
+('SL', 'Sublingual', 'NÃO'),
+('SNC', 'Sistema Nervoso Central', 'SIM'),
+('SND', 'Serviços de Nutrição e Dietética', 'SIM'),
+('SNE', 'Sonda Nasoenteral', 'SIM'),
+('SNG', 'Sonda Nasogástrica', 'SIM'),
+('SOE', 'Sonda Oroenteral', 'SIM'),
+('SOG', 'Sonda Orogástrica', 'SIM'),
+('SOL.', 'Solução', 'SIM'),
+('SOL. INJ.', 'Solução Injetável', 'SIM'),
+('SpO2', 'Saturação de Oxigênio', 'SIM'),
+('SRG', 'Seringa (de seringa preenchida)', 'SIM'),
+('SRI', 'Síndrome de Resposta Inflamatória', 'SIM'),
+('SRPA', 'Sala de Recuperação Pós Anestésica', 'SIM'),
+('SSIADH', 'Síndrome Secreção Inapropriada do Hormônio Anti-diurético', 'SIM'),
+('Sub', 'Subcutâneo', 'NÃO'),
+('SUBL', 'Sublingual', 'SIM'),
+('Sup', 'Supositório', 'NÃO'),
+('SUSP', 'Suspensão', 'SIM'),
+('SUSP.', 'Suspensão', 'SIM'),
+('SV', 'Sinais Vitais', 'SIM'),
+('SvO2', 'Saturação de Oxigênio da Artéria Pulmonar', 'SIM'),
+('SVA', 'Sonda/Sondagem Vesical de Alívio', 'SIM'),
+('SvcO2', 'Saturação Venosa Central de Oxigênio', 'SIM'),
+('SVD', 'Sonda/Sondagem Vesical de Demora', 'SIM'),
+('T', 'Temperatura', 'SIM'),
+('T3', 'Triiodotironina', 'SIM'),
+('T4', 'Tetraiodotironina', 'SIM'),
+('TAC', 'Triancinolona', 'NÃO'),
+('TAN', 'Triagem Auditiva Neonatal', 'SIM'),
+('Tax', 'Temperatura Axilar', 'SIM'),
+('TBC', 'Tuberculose', 'SIM'),
+('TC', 'Tomografia Computadorizada', 'SIM'),
+('TCE', 'Trauma/Traumatismo Crânio-Encefálico', 'SIM'),
+('TCLE', 'Termo de consentimento livre e esclarecido', 'SIM'),
+('TD', 'Via Transdérmica', 'SIM'),
+('TDAH', 'Transtorno de Déficit de Atenção e Hiperatividade', 'SIM'),
+('TDF', 'Tenofovir', 'SIM'),
+('TEP', 'Tromboembolismo Pulmonar', 'SIM'),
+('TEPT', 'Transtorno do Estresse pós-traumático', 'SIM'),
+('TEV', 'Tromboembolismo venoso', 'SIM'),
+('TExp', 'Tempo Expiratório', 'SIM'),
+('TGO', 'Transaminase glutâmico', 'SIM'),
+('TGP', 'Transaminase glutâmico pirúvica', 'SIM'),
+('Tlnsp', 'Tempo Inspiratório', 'SIM'),
+('TMO', 'Transplante de Medula Óssea', 'SIM'),
+('TNF', 'Fator Necrose Tumoral', 'SIM'),
+('TNM', 'Transtorno Neurocognitivo Maior', 'SIM'),
+('TOC', 'Transtorno Obsessivo Compulsivo', 'SIM'),
+('TOP', 'Tópico', 'SIM'),
+('TOT', 'Tubo Orotraqueal', 'SIM'),
+('TPA', 'Alteplase (Actylise)', 'NÃO'),
+('TPM', 'Tensão Pré-Menstrual', 'SIM'),
+('TPP', 'Trabalho de Parto Prematuro', 'SIM'),
+('TQT', 'Traqueostomia', 'SIM'),
+('TRM', 'Traumatismo Raquimedular', 'SIM'),
+('TSH', 'Hormônio Tireoestimulante', 'SIM'),
+('TSV', 'Taquicardia Supraventricular', 'SIM'),
+('TT', 'Tempo de Trombina', 'SIM'),
+('TTPA', 'Tempo de Tromboplastina Ativada', 'SIM'),
+('TTRN', 'Taquipneia Transitória do Recém-Nascido', 'SIM'),
+('TU', 'Tumor', 'SIM'),
+('TV', 'Taquicardia Ventricular', 'SIM'),
+('TVP', 'Trombose Venosa Profunda', 'SIM'),
+('Tx', 'Transplante', 'SIM'),
+('U ou u', 'Unidade', 'SIM'),
+('UFC', 'Unidade Formadora de Colônia', 'SIM'),
+('UI', 'Unidades internacionais', 'SIM'),
+('UND. INT.', 'Unidades Internacionais', 'SIM'),
+('UPP', 'Úlcera por pressão', 'SIM'),
+('URC', 'Urocultura', 'SIM'),
+('USG', 'Ultrassonografia', 'SIM'),
+('UTI', 'Unidade de Terapia Intensiva', 'SIM'),
+('UTI-A', 'Unidade de Terapia Intensiva Adulto', 'SIM'),
+('UTI-NEO', 'Unidade de Terapia Intensiva Neonatal', 'SIM'),
+('UTI-PED', 'Unidade de Terapia Intensiva Pediátrica', 'SIM'),
+('V/Q', 'Ventilação Perfusão', 'SIM'),
+('VAC', 'Volume de Ar Corrente', 'SIM'),
+('VAS', 'Vias aéreas superiores', 'SIM'),
+('VB', 'Via bucal (entre as bochechas)', 'SIM'),
+('VC', 'Volume Controlado', 'SIM'),
+('VCM', 'Volume Corpuscular Médio', 'SIM'),
+('VD', 'Ventrículo Direito', 'SIM'),
+('VDG', 'Videodeglutograma', 'SIM'),
+('VDRL', 'Venereal Diease Reserch Laboratory', 'SIM'),
+('VE', 'Ventrículo Esquerdo', 'SIM'),
+('VET', 'Valor Energético Total', 'SIM'),
+('VF', 'Válvula Fonatória (Passy Muir)', 'SIM'),
+('VHS', 'Velocidade de Sedimentação', 'SIM'),
+('VM', 'Ventilação Mecânica', 'SIM'),
+('Vmin', 'Volume Minuto', 'SIM'),
+('VNAS', 'Via Nasal', 'SIM'),
+('VNI', 'Ventilação Não Invasiva', 'SIM'),
+('VO', 'Via Oral', 'SIM'),
+('Vol.', 'Volume', 'SIM'),
+('VR', 'Volume residual', 'SIM'),
+('VRET', 'Via Retal', 'SIM'),
+('VSV', 'Volume Sistólico', 'SIM'),
+('VSV', 'Via Sonda', 'NÃO'),
+('VV', 'Via Vaginal', 'SIM'),
+('X', 'Vezes', 'SIM'),
+('ZnSO4', 'Sulfato de Zinco', 'SIM'),
+('α', 'Alfa', 'SIM'),
+('β', 'Beta', 'SIM'),
+('βHCG', 'β Gonadotrofina Coriônica Humana', 'SIM'),
+('γ', 'Gama', 'SIM');
+
+/*ALTERAÇÕES*/
+
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1993-08-08' 
+WHERE CD_MATRICULA = 70;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1991-08-08' 
+WHERE CD_MATRICULA = 71;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1997-08-08' 
+WHERE CD_MATRICULA = 72;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1997-08-08' 
+WHERE CD_MATRICULA = 73;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1994-08-08' 
+WHERE CD_MATRICULA = 74;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1998-08-08' 
+WHERE CD_MATRICULA = 75;
+--
+#SEGUNDA PARTE
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1991-08-16' 
+WHERE CD_MATRICULA = 12;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1985-08-16' 
+WHERE CD_MATRICULA = 13;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1999-08-16' 
+WHERE CD_MATRICULA = 18;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1991-08-16' 
+WHERE CD_MATRICULA = 24;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1990-08-16' 
+WHERE CD_MATRICULA = 31;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1988-08-16' 
+WHERE CD_MATRICULA = 46;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1994-08-16' 
+WHERE CD_MATRICULA = 52;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1983-08-16' 
+WHERE CD_MATRICULA = 67;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1990-08-16' 
+WHERE CD_MATRICULA = 82;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1988-08-16' 
+WHERE CD_MATRICULA = 83;
+--
+UPDATE USUARIO  
+SET DATA_NASCIMENTO = '1983-08-16' 
+WHERE CD_MATRICULA = 91;
